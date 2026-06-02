@@ -1,41 +1,99 @@
 
 This is an interactive network map showing the third-party tracking domains embedded in 20 of the most popular english news websites.
 
-##Nodes##
-Every node is either a news outlet or a company collecting data about its readers. 
-##Edges##
-Every edge is a real connection detected during a live browser crawl.
+This project reveals how modern news websites connect to advertising and analytics ecosystems through real-time browser-tracked data flows.
 
-##Step 1 - Playwright##
-Used Playwright, a headless browser automation tool, to visit each news site the way a real reader would. 
-For each visit the crawler:
-- Intercepted every network request the page made
-- Identified all third-party domains (any domain different from the news site itself)
-- Simulated scrolling to trigger lazy-loaded trackers
-- Attempted to click cookie consent banners to capture the full post-consent tracker set
-- Collected all cookies set by third-party domains, including name, expiry date, and security flags
-Each site was visited in a clean browser context with no prior cookies, so results were not contaminated between sites.
+---
 
-##Step 2 -  Enrichment with DuckDuckGo Tracker Radar##
-Cross-referenced every detected domain against the DuckDuckGo Tracker Radar dataset.
-It is an open database built from millions of real browser sessions. 
-The goal was to retrieve:
-- Owner — the real company behind the domain (e.g. Google LLC, Adobe Inc.)
-- Category — what the tracker does (Ad Motivated Tracking, Analytics, CDN, Fingerprinting)
-- Prevalence — how widely the tracker appears across the web
+## Overview
 
-##Step 3 — Graph##
-Each news outlet and each vendor is a node. 
-Each detected relationship is an edge. 
-Nodes are sized by the number of connections they have; the more news sites a vendor appears on, the larger its node. 
-Vendor nodes are colored by category.
+This visualization maps the hidden data infrastructure behind news consumption.
 
-##Limitations##
+- **Nodes** → News publishers + tracking companies  
+- **Edges** → Real third-party network requests observed during live browsing  
 
-- Consent walls: some outlets (particularly European ones) block all trackers until a user clicks "Accept All". Where our consent-click automation failed, vendor counts may be lower than reality.
-- Dynamic trackers: some vendors only load after specific user interactions like video plays or ad clicks, and are not captured here.
-- Point in time: tracker relationships change. This data reflects a single crawl done 1rst June 2026.
+Each connection represents a **real data exchange** between a user-facing news site and an external tracking domain.
 
-##Data files##
-docs/nodes.json — all outlet and vendor nodes with owner and category metadata
-docs/edges.json — all detected connections between outlets and vendors
+---
+
+## Data Collection Pipeline
+
+### 1. Browser Simulation (Playwright)
+
+Using **Playwright**, a headless browser automation tool, each news site was visited as a real user would experience it.
+
+During each session, the crawler:
+
+- Intercepted all network requests in real time  
+- Identified third-party domains (non-origin requests)  
+- Simulated scrolling to trigger lazy-loaded trackers  
+- Attempted cookie consent interactions to capture post-consent behavior  
+- Captured third-party cookies (name, expiry, security flags)
+
+Each site was visited in a **clean, isolated browser context** to ensure data integrity.
+
+---
+
+### 2. Tracker Enrichment (DuckDuckGo Tracker Radar)
+
+All detected domains were enriched using the  
+**DuckDuckGo Tracker Radar dataset**, an open-source database built from large-scale web measurements.
+
+For each tracker, we retrieved:
+
+- Owner (e.g., Google LLC, Adobe Inc.)  
+- Category (Advertising, Analytics, CDN, Fingerprinting, etc.)  
+- Web-wide prevalence  
+
+---
+
+### 3. Graph Construction
+
+The dataset is modeled as a bipartite graph:
+
+- **News outlets → Tracker vendors**
+- Nodes are weighted by connectivity
+- Vendor nodes are categorized and color-coded
+
+Highly connected trackers emerge as structural hubs of the modern web.
+
+---
+
+## Limitations
+
+- **Consent banners** may block trackers before user interaction
+-  Some trackers load only after specific interactions (video play, ad clicks, etc.)
+-   Data represents a single snapshot (**1 June 2026**)
+-   Tracking ecosystems evolve continuously
+
+---
+
+## Data Structure
+
+
+docs/
+├── nodes.json # News outlets + tracker vendors with metadata
+└── edges.json # Observed connections between sites and trackers
+
+
+---
+
+## Insight
+
+This project exposes the **invisible infrastructure of the modern web**, showing how journalism platforms are deeply interwoven with global data collection and advertising networks.
+
+---
+
+## interesting Future Avenues 
+- Time-series tracking of vendor changes  
+- Consent-mode comparison  
+- Tracker clustering by category influence  
+
+---
+
+## Tech Stack
+
+- Playwright (browser automation)
+- Node.js (data pipeline)
+- DuckDuckGo Tracker Radar (enrichment dataset)
+- JSON graph modeling
