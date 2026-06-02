@@ -441,11 +441,11 @@ function buildTop10(nodes, edges) {
 function buildSim(nodes, edges, cc) {
   return d3.forceSimulation()
     .force("link", d3.forceLink().id(d => d.id).distance(75).strength(0.35))
-    .force("charge", d3.forceManyBody().strength(d => d.type === "outlet" ? -500 : -55))
+    .force("charge", d3.forceManyBody().strength(d => d.type === "outlet" ? -200 : -25))
     .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
     .force("collision", d3.forceCollide().radius(d => nodeR(d, cc) + 6))
-    .alphaDecay(0.022)
-    .velocityDecay(0.45);
+    .alphaDecay(0.008)
+    .velocityDecay(0.65);
 }
 
 /* ── top10 toggle ── */
