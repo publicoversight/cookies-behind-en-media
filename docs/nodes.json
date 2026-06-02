@@ -1,418 +1,2564 @@
 [
-  {"id":"nytimes.com","type":"outlet"},{"id":"washingtonpost.com","type":"outlet"},{"id":"theguardian.com","type":"outlet"},{"id":"bbc.com","type":"outlet"},{"id":"reuters.com","type":"outlet"},{"id":"apnews.com","type":"outlet"},{"id":"lemonde.fr","type":"outlet"},{"id":"elpais.com","type":"outlet"},{"id":"spiegel.de","type":"outlet"},{"id":"corriere.it","type":"outlet"},{"id":"repubblica.it","type":"outlet"},{"id":"folha.uol.com.br","type":"outlet"},{"id":"aljazeera.com","type":"outlet"},{"id":"scmp.com","type":"outlet"},{"id":"timesofindia.com","type":"outlet"},{"id":"dailymail.co.uk","type":"outlet"},{"id":"foxnews.com","type":"outlet"},{"id":"cnn.com","type":"outlet"},{"id":"politico.com","type":"outlet"},{"id":"dw.com","type":"outlet"},
-  {"id":"googletagmanager.com","type":"vendor","owner":"Google LLC","category":"Analytics"},
-  {"id":"google.com","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"doubleclick.net","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"gstatic.com","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"googlesyndication.com","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"adsrvr.org","type":"vendor","owner":"The Trade Desk Inc","category":"Ad Motivated Tracking"},
-  {"id":"adnxs.com","type":"vendor","owner":"Microsoft Corporation","category":"Ad Motivated Tracking"},
-  {"id":"adtrafficquality.google","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"rubiconproject.com","type":"vendor","owner":"Magnite, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"criteo.com","type":"vendor","owner":"Criteo SA","category":"Ad Motivated Tracking"},
-  {"id":"pubmatic.com","type":"vendor","owner":"PubMatic, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"crwdcntrl.net","type":"vendor","owner":"Lotame Solutions, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"casalemedia.com","type":"vendor","owner":"Index Exchange, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"amazon-adsystem.com","type":"vendor","owner":"Amazon Technologies, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"yahoo.com","type":"vendor","owner":"Yahoo Inc.","category":"Ad Motivated Tracking"},
-  {"id":"openx.net","type":"vendor","owner":"OpenX Technologies Inc","category":"Ad Motivated Tracking"},
-  {"id":"demdex.net","type":"vendor","owner":"Adobe Inc.","category":"Ad Motivated Tracking"},
-  {"id":"3lift.com","type":"vendor","owner":"TripleLift","category":"Ad Motivated Tracking"},
-  {"id":"bidswitch.net","type":"vendor","owner":"IPONWEB GmbH","category":"Ad Motivated Tracking"},
-  {"id":"creativecdn.com","type":"vendor","owner":"RTB House S.A.","category":"Ad Motivated Tracking"},
-  {"id":"stackadapt.com","type":"vendor","owner":"Collective Roll","category":"Ad Motivated Tracking"},
-  {"id":"turn.com","type":"vendor","owner":"Amobee, Inc","category":"Ad Motivated Tracking"},
-  {"id":"bidr.io","type":"vendor","owner":"Beeswax","category":"Ad Motivated Tracking"},
-  {"id":"media.net","type":"vendor","owner":"Media.net Advertising FZ-LLC","category":"Ad Motivated Tracking"},
-  {"id":"adform.net","type":"vendor","owner":"Adform A/S","category":"Ad Motivated Tracking"},
-  {"id":"dotomi.com","type":"vendor","owner":"Conversant LLC","category":"Ad Motivated Tracking"},
-  {"id":"simpli.fi","type":"vendor","owner":"Simplifi Holdings Inc.","category":"Ad Motivated Tracking"},
-  {"id":"kargo.com","type":"vendor","owner":"Kargo Global, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"mfadsrvr.com","type":"vendor","owner":"IPONWEB GmbH","category":"Ad Motivated Tracking"},
-  {"id":"onaudience.com","type":"vendor","owner":"OnAudience Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"doubleverify.com","type":"vendor","owner":"DoubleVerify","category":"Ad Motivated Tracking"},
-  {"id":"chartbeat.com","type":"vendor","owner":"Chartbeat","category":"Analytics"},
-  {"id":"datadoghq-browser-agent.com","type":"vendor","owner":"Datadog, Inc.","category":"Analytics"},
-  {"id":"semasio.net","type":"vendor","owner":"Semasio GmbH","category":"Ad Motivated Tracking"},
-  {"id":"zeotap.com","type":"vendor","owner":"Zeotap GmbH","category":"Ad Motivated Tracking"},
-  {"id":"geoedge.be","type":"vendor","owner":"Five Media Marketing Limited","category":"Ad Motivated Tracking"},
-  {"id":"googleapis.com","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"nyt.com","type":"vendor","owner":"New York Times","category":"Unknown"},
-  {"id":"co.uk","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"chartbeat.net","type":"vendor","owner":"Chartbeat","category":"Analytics"},
-  {"id":"optimizely.com","type":"vendor","owner":"Optimizely, Inc.","category":"Analytics"},
-  {"id":"privacy-mgmt.com","type":"vendor","owner":"Sourcepoint Technologies Inc","category":"Analytics"},
-  {"id":"tinypass.com","type":"vendor","owner":"Piano Software","category":"Analytics"},
-  {"id":"dotmetrics.net","type":"vendor","owner":"Dotmetrics","category":"Analytics"},
-  {"id":"captcha-delivery.com","type":"vendor","owner":"DataDome","category":"Analytics"},
-  {"id":"google-analytics.com","type":"vendor","owner":"Google LLC","category":"Analytics"},
-  {"id":"cloudflareinsights.com","type":"vendor","owner":"Cloudflare, Inc.","category":"Analytics"},
-  {"id":"facebook.net","type":"vendor","owner":"Facebook, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"rlcdn.com","type":"vendor","owner":"LiveRamp Holdings, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"linkedin.com","type":"vendor","owner":"Microsoft Corporation","category":"Ad Motivated Tracking"},
-  {"id":"id5-sync.com","type":"vendor","owner":"ID5 Technology Ltd","category":"Ad Motivated Tracking"},
-  {"id":"tapad.com","type":"vendor","owner":"Tapad, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"eu-1-id5-sync.com","type":"vendor","owner":"ID5 Technology Ltd","category":"Ad Motivated Tracking"},
-  {"id":"liadm.com","type":"vendor","owner":"LiveIntent Inc.","category":"Ad Motivated Tracking"},
-  {"id":"2mdn.net","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"cookielaw.org","type":"vendor","owner":"OneTrust LLC","category":"Analytics"},
-  {"id":"scorecardresearch.com","type":"vendor","owner":"comScore, Inc","category":"Analytics"},
-  {"id":"onetrust.com","type":"vendor","owner":"OneTrust LLC","category":"Analytics"},
-  {"id":"lijit.com","type":"vendor","owner":"Sovrn Holdings","category":"Ad Motivated Tracking"},
-  {"id":"sharethrough.com","type":"vendor","owner":"Sharethrough, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"teads.tv","type":"vendor","owner":"Teads SA","category":"Ad Motivated Tracking"},
-  {"id":"everesttech.net","type":"vendor","owner":"Adobe Inc.","category":"Ad Motivated Tracking"},
-  {"id":"smartadserver.com","type":"vendor","owner":"Smartadserver S.A.S","category":"Ad Motivated Tracking"},
-  {"id":"gumgum.com","type":"vendor","owner":"GumGum","category":"Ad Motivated Tracking"},
-  {"id":"1rx.io","type":"vendor","owner":"RhythmOne","category":"Ad Motivated Tracking"},
-  {"id":"360yield.com","type":"vendor","owner":"Improve Digital BV","category":"Ad Motivated Tracking"},
-  {"id":"ipredictive.com","type":"vendor","owner":"Adelphic, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"intentiq.com","type":"vendor","owner":"Almondnet Group","category":"Ad Motivated Tracking"},
-  {"id":"outbrain.com","type":"vendor","owner":"Outbrain","category":"Ad Motivated Tracking"},
-  {"id":"contextweb.com","type":"vendor","owner":"Pulsepoint, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"a-mo.net","type":"vendor","owner":"Monet Engine Inc.","category":"Ad Motivated Tracking"},
-  {"id":"quantserve.com","type":"vendor","owner":"Quantcast Corporation","category":"Analytics"},
-  {"id":"onetag-sys.com","type":"vendor","owner":"OneTag Limited","category":"Ad Motivated Tracking"},
-  {"id":"rfihub.com","type":"vendor","owner":"Zeta Global","category":"Ad Motivated Tracking"},
-  {"id":"temu.com","type":"vendor","owner":"Pinduoduo Inc.","category":"Ad Motivated Tracking"},
-  {"id":"agkn.com","type":"vendor","owner":"TransUnion LLC","category":"Ad Motivated Tracking"},
-  {"id":"eyeota.net","type":"vendor","owner":"eyeota Limited","category":"Ad Motivated Tracking"},
-  {"id":"sitescout.com","type":"vendor","owner":"Centro, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"sonobi.com","type":"vendor","owner":"Sonobi, Inc","category":"Ad Motivated Tracking"},
-  {"id":"blismedia.com","type":"vendor","owner":"Blis Global Ltd","category":"Ad Motivated Tracking"},
-  {"id":"postrelease.com","type":"vendor","owner":"Nativo, Inc","category":"Ad Motivated Tracking"},
-  {"id":"fwmrm.net","type":"vendor","owner":"FreeWheel","category":"Ad Motivated Tracking"},
-  {"id":"loopme.me","type":"vendor","owner":"Online Media Solutions Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"yieldmo.com","type":"vendor","owner":"YieldMo, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"rapidedge.io","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"btloader.com","type":"vendor","owner":"Blockthrough Inc.","category":"Ad Motivated Tracking"},
-  {"id":"ad-delivery.net","type":"vendor","owner":"easyAd Deutschland GmbH","category":"Ad Motivated Tracking"},
-  {"id":"inmobi.com","type":"vendor","owner":"InMobi Pte Ltd","category":"Ad Motivated Tracking"},
-  {"id":"smaato.net","type":"vendor","owner":"Smaato Inc.","category":"Ad Motivated Tracking"},
-  {"id":"googletagservices.com","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"admanmedia.com","type":"vendor","owner":"ADman Media","category":"Ad Motivated Tracking"},
-  {"id":"dns-finder.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"fastclick.net","type":"vendor","owner":"Conversant LLC","category":"Ad Motivated Tracking"},
-  {"id":"smilewanted.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"yellowblue.io","type":"vendor","owner":"Unity Software Inc.","category":"Ad Motivated Tracking"},
-  {"id":"seedtag.com","type":"vendor","owner":"SEEDTAG ADVERTISING S.L.","category":"Ad Motivated Tracking"},
-  {"id":"ingage.tech","type":"vendor","owner":"Insticator","category":"Ad Motivated Tracking"},
-  {"id":"opera.com","type":"vendor","owner":"Opera Software AS","category":"Unknown"},
-  {"id":"ccgateway.net","type":"vendor","owner":"Clicksco FZ","category":"Ad Motivated Tracking"},
-  {"id":"indexww.com","type":"vendor","owner":"Index Exchange, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"jwplayer.com","type":"vendor","owner":"LongTail Ad Solutions, Inc.","category":"CDN"},
-  {"id":"exelator.com","type":"vendor","owner":"The Nielsen Company","category":"Ad Motivated Tracking"},
-  {"id":"presage.io","type":"vendor","owner":"Ogury Limited","category":"Ad Motivated Tracking"},
-  {"id":"ad.gt","type":"vendor","owner":"Audigent","category":"Ad Motivated Tracking"},
-  {"id":"hadronid.net","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"a-mx.com","type":"vendor","owner":"Monet Engine Inc.","category":"Ad Motivated Tracking"},
-  {"id":"adkernel.com","type":"vendor","owner":"Adkernel, LLC","category":"Ad Motivated Tracking"},
-  {"id":"omnitagjs.com","type":"vendor","owner":"Adyoulike","category":"Ad Motivated Tracking"},
-  {"id":"deepintent.com","type":"vendor","owner":"DeepIntent Inc","category":"Ad Motivated Tracking"},
-  {"id":"disqus.com","type":"vendor","owner":"Disqus, Inc.","category":"Analytics"},
-  {"id":"trustedstack.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"connatix.com","type":"vendor","owner":"Connatix","category":"Ad Motivated Tracking"},
-  {"id":"syncingbridge.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"amxrtb.com","type":"vendor","owner":"Monet Engine Inc.","category":"Ad Motivated Tracking"},
-  {"id":"measureadv.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"sharethis.com","type":"vendor","owner":"ShareThis, Inc","category":"Ad Motivated Tracking"},
-  {"id":"primis.tech","type":"vendor","owner":"McCann Disciplines Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"tracookiepixel.xyz","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"krushmedia.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"parsely.com","type":"vendor","owner":"Parsely, Inc.","category":"Analytics"},
-  {"id":"appier.net","type":"vendor","owner":"Appier Group, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"eskimi.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"kueezrtb.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"tribalfusion.com","type":"vendor","owner":"Exponential Interactive Inc.","category":"Ad Motivated Tracking"},
-  {"id":"rqtrk.eu","type":"vendor","owner":"Roq.ad","category":"Ad Motivated Tracking"},
-  {"id":"script.ac","type":"vendor","owner":"Human Security, Inc.","category":"Analytics"},
-  {"id":"webcontentassessor.com","type":"vendor","owner":"TMT Digital Inc.","category":"Ad Motivated Tracking"},
-  {"id":"sentry-cdn.com","type":"vendor","owner":"Functional Software, Inc.","category":"CDN"},
-  {"id":"onesignal.com","type":"vendor","owner":"OneSignal","category":"Analytics"},
-  {"id":"jwpsrv.com","type":"vendor","owner":"LongTail Ad Solutions, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"minutemedia-prebid.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"digitalaudience.io","type":"vendor","owner":"Social Audience B.V.","category":"Ad Motivated Tracking"},
-  {"id":"adroll.com","type":"vendor","owner":"AdRoll, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"pmbmonetize.live","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"advolve.io","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"streamrail.com","type":"vendor","owner":"Unity Software Inc.","category":"Ad Motivated Tracking"},
-  {"id":"unrulymedia.com","type":"vendor","owner":"Unruly Group Limited","category":"Ad Motivated Tracking"},
-  {"id":"company-target.com","type":"vendor","owner":"Demandbase, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"bounceexchange.com","type":"vendor","owner":"Bounce Exchange","category":"Ad Motivated Tracking"},
-  {"id":"betweendigital.com","type":"vendor","owner":"SSP Network Ltd","category":"Ad Motivated Tracking"},
-  {"id":"the-ozone-project.com","type":"vendor","owner":"The Ozone Project","category":"Ad Motivated Tracking"},
-  {"id":"permutive.app","type":"vendor","owner":"Permutive, Inc.","category":"Analytics"},
-  {"id":"vistarsagency.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"adlightning.com","type":"vendor","owner":"Ad Lightning, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"permutive.com","type":"vendor","owner":"Permutive, Inc.","category":"Analytics"},
-  {"id":"spotxchange.com","type":"vendor","owner":"SpotX, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"mgid.com","type":"vendor","owner":"MGID Inc","category":"Ad Motivated Tracking"},
-  {"id":"iqm.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"bttrack.com","type":"vendor","owner":"Bidtellect, Inc","category":"Ad Motivated Tracking"},
-  {"id":"wknd.ai","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"acuityplatform.com","type":"vendor","owner":"AcuityAds","category":"Ad Motivated Tracking"},
-  {"id":"mediago.io","type":"vendor","owner":"Baidu, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"pub.network","type":"vendor","owner":"Publisher First, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"marphezis.com","type":"vendor","owner":"Online Media Solutions Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"adgrx.com","type":"vendor","owner":"AdGear Technologies Inc.","category":"Ad Motivated Tracking"},
-  {"id":"optimise.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"socdm.com","type":"vendor","owner":"Supership Inc","category":"Ad Motivated Tracking"},
-  {"id":"sail-horizon.com","type":"vendor","owner":"CM Group","category":"Ad Motivated Tracking"},
-  {"id":"fsrv.io","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"t13.io","type":"vendor","owner":"Publisher First, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"cdnbasket.net","type":"vendor","owner":"Bounce Exchange","category":"CDN"},
-  {"id":"wurflcloud.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"prmutv.co","type":"vendor","owner":"Permutive, Inc.","category":"Analytics"},
-  {"id":"sail-personalize.com","type":"vendor","owner":"CM Group","category":"Ad Motivated Tracking"},
-  {"id":"blueconic.net","type":"vendor","owner":"BlueConic, Inc.","category":"Analytics"},
-  {"id":"creative-serving.com","type":"vendor","owner":"Platform161","category":"Ad Motivated Tracking"},
-  {"id":"sascdn.com","type":"vendor","owner":"Smartadserver S.A.S","category":"CDN"},
-  {"id":"ymmobi.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"cdnwidget.com","type":"vendor","owner":"CDNWIDGET.COM","category":"CDN"},
-  {"id":"loudecho.ai","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"adition.com","type":"vendor","owner":"Virtual Minds AG","category":"Ad Motivated Tracking"},
-  {"id":"ctnsnet.com","type":"vendor","owner":"Crimtan Holdings Ltd","category":"Ad Motivated Tracking"},
-  {"id":"yieldlab.net","type":"vendor","owner":"Virtual Minds AG","category":"Ad Motivated Tracking"},
-  {"id":"ntv.io","type":"vendor","owner":"Nativo, Inc","category":"Ad Motivated Tracking"},
-  {"id":"jwpcdn.com","type":"vendor","owner":"LongTail Ad Solutions, Inc.","category":"CDN"},
-  {"id":"ck-ie.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"rtb.mx","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"e-volution.ai","type":"vendor","owner":"Evolution Technologies INC.","category":"Ad Motivated Tracking"},
-  {"id":"amx1.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"bouncex.net","type":"vendor","owner":"Bounce Exchange","category":"Ad Motivated Tracking"},
-  {"id":"liftdsp.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"pinklion.io","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"ortb.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"playdigo.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"mediarithmics.com","type":"vendor","owner":"mediarithmics SAS","category":"Analytics"},
-  {"id":"visx.net","type":"vendor","owner":"YOC AG","category":"Ad Motivated Tracking"},
-  {"id":"usablenet.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"stickyadstv.com","type":"vendor","owner":"FreeWheel","category":"Ad Motivated Tracking"},
-  {"id":"wp.pl","type":"vendor","owner":"Wirtualna Polska","category":"Unknown"},
-  {"id":"viafoura.co","type":"vendor","owner":"Viafoura Inc.","category":"Analytics"},
-  {"id":"jwpltx.com","type":"vendor","owner":"LongTail Ad Solutions, Inc.","category":"Analytics"},
-  {"id":"brand-display.com","type":"vendor","owner":"Knorex Pte. Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"taptapnetworks.com","type":"vendor","owner":"TAPTAP DIGITAL, S.L.","category":"Ad Motivated Tracking"},
-  {"id":"tru.am","type":"vendor","owner":"trueAnthem Corp","category":"Ad Motivated Tracking"},
-  {"id":"shb-sync.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"serverbid.com","type":"vendor","owner":"Consumable, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"mediagotechnology.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"viafoura.net","type":"vendor","owner":"Viafoura Inc.","category":"Analytics"},
-  {"id":"html-load.cc","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"adscale.de","type":"vendor","owner":"Stroeer Group","category":"Ad Motivated Tracking"},
-  {"id":"hybrid.ai","type":"vendor","owner":"Hybrid Adtech, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"kameleoon.io","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"lkqd.net","type":"vendor","owner":"Nexstar Media Group","category":"Ad Motivated Tracking"},
-  {"id":"onelink.me","type":"vendor","owner":"AppsFlyer","category":"Analytics"},
-  {"id":"bidtheatre.com","type":"vendor","owner":"BidTheatre AB","category":"Ad Motivated Tracking"},
-  {"id":"avads.net","type":"vendor","owner":"AntVoice","category":"Ad Motivated Tracking"},
-  {"id":"smartclip.net","type":"vendor","owner":"smartclip Europe GmbH","category":"Ad Motivated Tracking"},
-  {"id":"dmxleo.com","type":"vendor","owner":"Dailymotion SA","category":"Ad Motivated Tracking"},
-  {"id":"de17a.com","type":"vendor","owner":"Delta Projects AB","category":"Ad Motivated Tracking"},
-  {"id":"dianomi.com","type":"vendor","owner":"Dianomi Ltd","category":"Ad Motivated Tracking"},
-  {"id":"zephr.com","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"iqzonertb.live","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"ad4m.at","type":"vendor","owner":"advanced STORE GmbH","category":"Ad Motivated Tracking"},
-  {"id":"ap.org","type":"vendor","owner":"The Associated Press","category":"Unknown"},
-  {"id":"google.de","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"gammaplatform.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"adsafety.net","type":"vendor","owner":"Online Solution Int Ltd","category":"Ad Motivated Tracking"},
-  {"id":"4dvertible.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"akamaihd.net","type":"vendor","owner":"Akamai Technologies","category":"CDN"},
-  {"id":"erne.co","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"eu-3-id5-sync.com","type":"vendor","owner":"ID5 Technology Ltd","category":"Ad Motivated Tracking"},
-  {"id":"eu-4-id5-sync.com","type":"vendor","owner":"ID5 Technology Ltd","category":"Ad Motivated Tracking"},
-  {"id":"kidpowers.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"pubeasy.io","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"puzzmo.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"smartstream.tv","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"tpcserve.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"amplitude.com","type":"vendor","owner":"Amplitude","category":"Analytics"},
-  {"id":"ebxcdn.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"lemde.fr","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"adobedtm.com","type":"vendor","owner":"Adobe Inc.","category":"Analytics"},
-  {"id":"omtrdc.net","type":"vendor","owner":"Adobe Inc.","category":"Analytics"},
-  {"id":"adswizz.com","type":"vendor","owner":"Sirius XM Holdings Inc.","category":"Ad Motivated Tracking"},
-  {"id":"mrf.io","type":"vendor","owner":"Marfeel Solutions, S.L.","category":"Analytics"},
-  {"id":"newsroom.bi","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"adobedc.net","type":"vendor","owner":"Adobe Inc.","category":"Analytics"},
-  {"id":"privacy-center.org","type":"vendor","owner":"Didomi","category":"Analytics"},
-  {"id":"streamtheworld.com","type":"vendor","owner":"Triton Digital, Inc.","category":"CDN"},
-  {"id":"sensic.net","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"arcpublishing.com","type":"vendor","owner":"The Washington Post","category":"CDN"},
-  {"id":"prisa.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"prisasd.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"prisamedia.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"cloudfront.net","type":"vendor","owner":"Amazon Web Services","category":"CDN"},
-  {"id":"amazonaws.com","type":"vendor","owner":"Amazon Web Services","category":"CDN"},
-  {"id":"cloudflare.com","type":"vendor","owner":"Cloudflare, Inc.","category":"CDN"},
-  {"id":"jsdelivr.net","type":"vendor","owner":"Prospect One","category":"CDN"},
-  {"id":"criteo.net","type":"vendor","owner":"Criteo SA","category":"Ad Motivated Tracking"},
-  {"id":"openxcdn.net","type":"vendor","owner":"OpenX Technologies Inc","category":"CDN"},
-  {"id":"privacymanager.io","type":"vendor","owner":"LiveRamp Holdings, Inc.","category":"Analytics"},
-  {"id":"taboola.com","type":"vendor","owner":"Taboola, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"richaudience.com","type":"vendor","owner":"Rich Audience Technologies","category":"Ad Motivated Tracking"},
-  {"id":"rtbhouse.com","type":"vendor","owner":"RTB House S.A.","category":"Ad Motivated Tracking"},
-  {"id":"imrworldwide.com","type":"vendor","owner":"The Nielsen Company","category":"Analytics"},
-  {"id":"confiant-integrations.net","type":"vendor","owner":"Confiant, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"crazyegg.com","type":"vendor","owner":"Crazy Egg, Inc.","category":"Analytics"},
-  {"id":"zemanta.com","type":"vendor","owner":"Outbrain","category":"Ad Motivated Tracking"},
-  {"id":"moloco.com","type":"vendor","owner":"Moloco Inc.","category":"Ad Motivated Tracking"},
-  {"id":"ipify.org","type":"vendor","owner":"ipify.org","category":"Unknown"},
-  {"id":"piano.io","type":"vendor","owner":"Piano Software","category":"Analytics"},
-  {"id":"anonymised.io","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"cxense.com","type":"vendor","owner":"Piano Software","category":"Analytics"},
-  {"id":"admatic.de","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"admixer.net","type":"vendor","owner":"Admixer Technologies","category":"Ad Motivated Tracking"},
-  {"id":"2o7.net","type":"vendor","owner":"Adobe Inc.","category":"Analytics"},
-  {"id":"appsflyer.com","type":"vendor","owner":"AppsFlyer","category":"Analytics"},
-  {"id":"speedcurve.com","type":"vendor","owner":"SpeedCurve Limited","category":"Analytics"},
-  {"id":"sophi.io","type":"vendor","owner":"The Globe and Mail Inc.","category":"Analytics"},
-  {"id":"dailymotion.com","type":"vendor","owner":"Dailymotion SA","category":"CDN"},
-  {"id":"iprom.net","type":"vendor","owner":"IPROM, d.o.o.","category":"Ad Motivated Tracking"},
-  {"id":"insurads.com","type":"vendor","owner":"InsurAds","category":"Ad Motivated Tracking"},
-  {"id":"cxpublic.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"dm-event.net","type":"vendor","owner":"Dailymotion SA","category":"Analytics"},
-  {"id":"dmcdn.net","type":"vendor","owner":"Dailymotion SA","category":"CDN"},
-  {"id":"tncid.app","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"ads-tinyorbit.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"bannerflow.net","type":"vendor","owner":"BannerFlow AB","category":"Ad Motivated Tracking"},
-  {"id":"rcsmetrics.it","type":"vendor","owner":"RCS Mediagroup S.p.A","category":"Analytics"},
-  {"id":"rcsobjects.it","type":"vendor","owner":"RCS Mediagroup S.p.A","category":"CDN"},
-  {"id":"corriereobjects.it","type":"vendor","owner":"RCS Mediagroup S.p.A","category":"CDN"},
-  {"id":"pangle-ads.com","type":"vendor","owner":"ByteDance Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"rcs.it","type":"vendor","owner":"RCS Mediagroup S.p.A","category":"Unknown"},
-  {"id":"rcspubblicita.it","type":"vendor","owner":"RCS Mediagroup S.p.A","category":"Ad Motivated Tracking"},
-  {"id":"facebook.com","type":"vendor","owner":"Facebook, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"bing.com","type":"vendor","owner":"Microsoft Corporation","category":"Ad Motivated Tracking"},
-  {"id":"clarity.ms","type":"vendor","owner":"Microsoft Corporation","category":"Analytics"},
-  {"id":"googleadservices.com","type":"vendor","owner":"Google LLC","category":"Ad Motivated Tracking"},
-  {"id":"tiktok.com","type":"vendor","owner":"ByteDance Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"tiktokw.us","type":"vendor","owner":"ByteDance Ltd.","category":"Ad Motivated Tracking"},
-  {"id":"mediavine.com","type":"vendor","owner":"Mediavine, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"tremorhub.com","type":"vendor","owner":"Telaria","category":"Ad Motivated Tracking"},
-  {"id":"4dex.io","type":"vendor","owner":"Adagio","category":"Ad Motivated Tracking"},
-  {"id":"applovin.com","type":"vendor","owner":"AppLovin Corporation","category":"Ad Motivated Tracking"},
-  {"id":"opecloud.com","type":"vendor","owner":"TripleLift","category":"Ad Motivated Tracking"},
-  {"id":"dwin1.com","type":"vendor","owner":"Awin AG","category":"Ad Motivated Tracking"},
-  {"id":"roeyecdn.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"roeye.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"anonm.io","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"iubenda.com","type":"vendor","owner":"iubenda s.r.l.","category":"Analytics"},
-  {"id":"brightcove.net","type":"vendor","owner":"Brightcove, Inc.","category":"CDN"},
-  {"id":"brightcove.com","type":"vendor","owner":"Brightcove, Inc.","category":"CDN"},
-  {"id":"gigya.com","type":"vendor","owner":"Gigya Inc","category":"Analytics"},
-  {"id":"preciso.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"mainadv.com","type":"vendor","owner":"MainADV","category":"Ad Motivated Tracking"},
-  {"id":"2trk.info","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"tangooserver.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"gedi.it","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"gedidigital.it","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"kataweb.it","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"repstatic.it","type":"vendor","owner":"Elemedia S.p.A.","category":"CDN"},
-  {"id":"gedistatic.it","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"gelestatic.it","type":"vendor","owner":"Elemedia S.p.A.","category":"CDN"},
-  {"id":"lescienze.it","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"nationalgeographic.it","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"paa-reporting-advertising.amazon","type":"vendor","owner":"Amazon Technologies, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"run.app","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"solocpm.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"youtube.com","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"matheranalytics.com","type":"vendor","owner":"Mather Economics","category":"Analytics"},
-  {"id":"navdmp.com","type":"vendor","owner":"Navegg S.A.","category":"Ad Motivated Tracking"},
-  {"id":"turner.com","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"Unknown"},
-  {"id":"uol.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"undertone.com","type":"vendor","owner":"Undertone Networks","category":"Ad Motivated Tracking"},
-  {"id":"cootlogix.com","type":"vendor","owner":"Vidazoo Ltd","category":"Ad Motivated Tracking"},
-  {"id":"quantcount.com","type":"vendor","owner":"Quantcast Corporation","category":"Analytics"},
-  {"id":"springserve.com","type":"vendor","owner":"SpringServe, LLC","category":"Ad Motivated Tracking"},
-  {"id":"trustarc.com","type":"vendor","owner":"TrustArc Inc.","category":"Analytics"},
-  {"id":"infolinks.com","type":"vendor","owner":"Infolink Media LLC","category":"Ad Motivated Tracking"},
-  {"id":"recaptcha.net","type":"vendor","owner":"Google LLC","category":"Analytics"},
-  {"id":"clickagy.com","type":"vendor","owner":"Clickagy","category":"Ad Motivated Tracking"},
-  {"id":"truste.com","type":"vendor","owner":"TrustArc Inc.","category":"Analytics"},
-  {"id":"boltdns.net","type":"vendor","owner":"Brightcove, Inc.","category":"CDN"},
-  {"id":"acint.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"sape.ru","type":"vendor","owner":"LTD Sape","category":"Ad Motivated Tracking"},
-  {"id":"bidberry.net","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"axonix.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"aljazeera.net","type":"vendor","owner":"Al Jazeera Media Network","category":"Unknown"},
-  {"id":"bedrockplatform.bid","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"sng.link","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"thehlive.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"withgoogle.com","type":"vendor","owner":"Google LLC","category":"Analytics"},
-  {"id":"typekit.net","type":"vendor","owner":"Adobe Inc.","category":"CDN"},
-  {"id":"licdn.com","type":"vendor","owner":"Microsoft Corporation","category":"CDN"},
-  {"id":"sentry.io","type":"vendor","owner":"Functional Software, Inc.","category":"Analytics"},
-  {"id":"googleusercontent.com","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"on.aws","type":"vendor","owner":"Amazon Web Services","category":"CDN"},
-  {"id":"npttech.com","type":"vendor","owner":"Piano Software","category":"Analytics"},
-  {"id":"tappx.com","type":"vendor","owner":"Tappcelator Media S.L.","category":"Ad Motivated Tracking"},
-  {"id":"i-scmp.com","type":"vendor","owner":"SCMP","category":"CDN"},
-  {"id":"ml314.com","type":"vendor","owner":"Bombora Inc.","category":"Ad Motivated Tracking"},
-  {"id":"adsafeprotected.com","type":"vendor","owner":"Integral Ad Science, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"go-mpulse.net","type":"vendor","owner":"Akamai Technologies","category":"Analytics"},
-  {"id":"im-apps.net","type":"vendor","owner":"Intimate Merger, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"akstat.io","type":"vendor","owner":"Akamai Technologies","category":"Analytics"},
-  {"id":"aniview.com","type":"vendor","owner":"ANIVIEW LTD","category":"Ad Motivated Tracking"},
-  {"id":"travelaudience.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"amazon.dev","type":"vendor","owner":"Amazon Technologies, Inc.","category":"CDN"},
-  {"id":"mygaru.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"mgaru.dev","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"admaster.cc","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"clmbtech.com","type":"vendor","owner":"Times Internet Ltd","category":"Ad Motivated Tracking"},
-  {"id":"ibeat-analytics.com","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"rediads.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"indiatimes.com","type":"vendor","owner":"Times Internet Ltd","category":"Unknown"},
-  {"id":"toiimg.com","type":"vendor","owner":"Times Internet Ltd","category":"CDN"},
-  {"id":"tvid.in","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"91-img.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"akamaized.net","type":"vendor","owner":"Akamai Technologies","category":"CDN"},
-  {"id":"filmipop.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"turncdn.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"fontawesome.com","type":"vendor","owner":"Fonticons Inc","category":"CDN"},
-  {"id":"appboycdn.com","type":"vendor","owner":"Braze, Inc.","category":"CDN"},
-  {"id":"braze.com","type":"vendor","owner":"Braze, Inc.","category":"Analytics"},
-  {"id":"trueanthem.com","type":"vendor","owner":"Unknown","category":"Ad Motivated Tracking"},
-  {"id":"knotch-cdn.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"knotch.it","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"knotch.com","type":"vendor","owner":"Unknown","category":"Analytics"},
-  {"id":"pix.pub","type":"vendor","owner":"MarketCast LLC","category":"Analytics"},
-  {"id":"atp.fox","type":"vendor","owner":"Fox Corporation","category":"Unknown"},
-  {"id":"dt.fox","type":"vendor","owner":"Fox Corporation","category":"Unknown"},
-  {"id":"strike.fox","type":"vendor","owner":"Fox Corporation","category":"Unknown"},
-  {"id":"wealthygeezwell.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"foxbusiness.com","type":"vendor","owner":"Fox Corporation","category":"Unknown"},
-  {"id":"rezync.com","type":"vendor","owner":"Zeta Global","category":"Ad Motivated Tracking"},
-  {"id":"stripe.com","type":"vendor","owner":"Stripe, Inc","category":"Analytics"},
-  {"id":"ampproject.org","type":"vendor","owner":"Google LLC","category":"CDN"},
-  {"id":"clean.gg","type":"vendor","owner":"Human Security, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"boomtrain.com","type":"vendor","owner":"Zeta Global","category":"Ad Motivated Tracking"},
-  {"id":"stripe.network","type":"vendor","owner":"Stripe, Inc","category":"CDN"},
-  {"id":"onetrust.io","type":"vendor","owner":"OneTrust LLC","category":"Analytics"},
-  {"id":"zqtk.net","type":"vendor","owner":"comScore, Inc","category":"Analytics"},
-  {"id":"litix.io","type":"vendor","owner":"Mux, Inc.","category":"Analytics"},
-  {"id":"warnermediacdn.com","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"CDN"},
-  {"id":"ngtv.io","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"CDN"},
-  {"id":"cnn.io","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"CDN"},
-  {"id":"wmcdp.io","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"Analytics"},
-  {"id":"brightline.tv","type":"vendor","owner":"BrightLine Partners LLC","category":"Ad Motivated Tracking"},
-  {"id":"discomax.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"max.com","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"Unknown"},
-  {"id":"ugdturner.com","type":"vendor","owner":"Warner Bros. Discovery, Inc.","category":"Unknown"},
-  {"id":"33across.com","type":"vendor","owner":"33Across, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"twitter.com","type":"vendor","owner":"Twitter, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"ads-twitter.com","type":"vendor","owner":"Twitter, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"t.co","type":"vendor","owner":"Twitter, Inc.","category":"Ad Motivated Tracking"},
-  {"id":"thrtle.com","type":"vendor","owner":"Throtle","category":"Ad Motivated Tracking"},
-  {"id":"tiqcdn.com","type":"vendor","owner":"Tealium Inc.","category":"CDN"},
-  {"id":"imgix.net","type":"vendor","owner":"Zebrafish Labs","category":"CDN"},
-  {"id":"clarium.io","type":"vendor","owner":"ClarityAd","category":"Ad Motivated Tracking"},
-  {"id":"tealiumiq.com","type":"vendor","owner":"Tealium Inc.","category":"Analytics"},
-  {"id":"adnxs-simple.com","type":"vendor","owner":"Microsoft Corporation","category":"Ad Motivated Tracking"},
-  {"id":"megaphone.fm","type":"vendor","owner":"Spotify AB","category":"CDN"},
-  {"id":"asadcdn.com","type":"vendor","owner":"Unknown","category":"CDN"},
-  {"id":"azureedge.net","type":"vendor","owner":"Microsoft Corporation","category":"CDN"},
-  {"id":"pa-cd.com","type":"vendor","owner":"Unknown","category":"Unknown"},
-  {"id":"ebu.io","type":"vendor","owner":"European Broadcasting Union","category":"Unknown"}
+  {
+    "id": "nytimes.com",
+    "type": "outlet"
+  },
+  {
+    "id": "theguardian.com",
+    "type": "outlet"
+  },
+  {
+    "id": "bbc.com",
+    "type": "outlet"
+  },
+  {
+    "id": "reuters.com",
+    "type": "outlet"
+  },
+  {
+    "id": "apnews.com",
+    "type": "outlet"
+  },
+  {
+    "id": "lemonde.fr",
+    "type": "outlet"
+  },
+  {
+    "id": "elpais.com",
+    "type": "outlet"
+  },
+  {
+    "id": "spiegel.de",
+    "type": "outlet"
+  },
+  {
+    "id": "corriere.it",
+    "type": "outlet"
+  },
+  {
+    "id": "repubblica.it",
+    "type": "outlet"
+  },
+  {
+    "id": "folha.uol.com.br",
+    "type": "outlet"
+  },
+  {
+    "id": "aljazeera.com",
+    "type": "outlet"
+  },
+  {
+    "id": "scmp.com",
+    "type": "outlet"
+  },
+  {
+    "id": "timesofindia.com",
+    "type": "outlet"
+  },
+  {
+    "id": "foxnews.com",
+    "type": "outlet"
+  },
+  {
+    "id": "cnn.com",
+    "type": "outlet"
+  },
+  {
+    "id": "politico.com",
+    "type": "outlet"
+  },
+  {
+    "id": "dw.com",
+    "type": "outlet"
+  },
+  {
+    "id": "googletagmanager.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "google.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "doubleclick.net",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "gstatic.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "googlesyndication.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adsrvr.org",
+    "type": "vendor",
+    "owner": "The Trade Desk Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adnxs.com",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adtrafficquality.google",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rubiconproject.com",
+    "type": "vendor",
+    "owner": "Magnite, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "criteo.com",
+    "type": "vendor",
+    "owner": "Criteo SA",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "pubmatic.com",
+    "type": "vendor",
+    "owner": "PubMatic, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "crwdcntrl.net",
+    "type": "vendor",
+    "owner": "Lotame Solutions, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "casalemedia.com",
+    "type": "vendor",
+    "owner": "Index Exchange, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "amazon-adsystem.com",
+    "type": "vendor",
+    "owner": "Amazon Technologies, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "yahoo.com",
+    "type": "vendor",
+    "owner": "Yahoo Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "openx.net",
+    "type": "vendor",
+    "owner": "OpenX Technologies Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "demdex.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "3lift.com",
+    "type": "vendor",
+    "owner": "TripleLift",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bidswitch.net",
+    "type": "vendor",
+    "owner": "IPONWEB GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "creativecdn.com",
+    "type": "vendor",
+    "owner": "RTB House S.A.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "stackadapt.com",
+    "type": "vendor",
+    "owner": "Collective Roll",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "turn.com",
+    "type": "vendor",
+    "owner": "Amobee, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bidr.io",
+    "type": "vendor",
+    "owner": "Beeswax",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "media.net",
+    "type": "vendor",
+    "owner": "Media.net Advertising FZ-LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adform.net",
+    "type": "vendor",
+    "owner": "Adform A/S",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "dotomi.com",
+    "type": "vendor",
+    "owner": "Conversant LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "simpli.fi",
+    "type": "vendor",
+    "owner": "Simplifi Holdings Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "kargo.com",
+    "type": "vendor",
+    "owner": "Kargo Global, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mfadsrvr.com",
+    "type": "vendor",
+    "owner": "IPONWEB GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "onaudience.com",
+    "type": "vendor",
+    "owner": "OnAudience Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "doubleverify.com",
+    "type": "vendor",
+    "owner": "DoubleVerify",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "chartbeat.com",
+    "type": "vendor",
+    "owner": "Chartbeat",
+    "category": "Analytics"
+  },
+  {
+    "id": "datadoghq-browser-agent.com",
+    "type": "vendor",
+    "owner": "Datadog, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "semasio.net",
+    "type": "vendor",
+    "owner": "Semasio GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "zeotap.com",
+    "type": "vendor",
+    "owner": "Zeotap GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "geoedge.be",
+    "type": "vendor",
+    "owner": "Five Media Marketing Limited",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "googleapis.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "nyt.com",
+    "type": "vendor",
+    "owner": "New York Times",
+    "category": "Unknown"
+  },
+  {
+    "id": "co.uk",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "chartbeat.net",
+    "type": "vendor",
+    "owner": "Chartbeat",
+    "category": "Analytics"
+  },
+  {
+    "id": "optimizely.com",
+    "type": "vendor",
+    "owner": "Optimizely, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "privacy-mgmt.com",
+    "type": "vendor",
+    "owner": "Sourcepoint Technologies Inc",
+    "category": "Analytics"
+  },
+  {
+    "id": "tinypass.com",
+    "type": "vendor",
+    "owner": "Piano Software",
+    "category": "Analytics"
+  },
+  {
+    "id": "dotmetrics.net",
+    "type": "vendor",
+    "owner": "Dotmetrics",
+    "category": "Analytics"
+  },
+  {
+    "id": "captcha-delivery.com",
+    "type": "vendor",
+    "owner": "DataDome",
+    "category": "Analytics"
+  },
+  {
+    "id": "google-analytics.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "cloudflareinsights.com",
+    "type": "vendor",
+    "owner": "Cloudflare, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "facebook.net",
+    "type": "vendor",
+    "owner": "Facebook, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rlcdn.com",
+    "type": "vendor",
+    "owner": "LiveRamp Holdings, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "linkedin.com",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "id5-sync.com",
+    "type": "vendor",
+    "owner": "ID5 Technology Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tapad.com",
+    "type": "vendor",
+    "owner": "Tapad, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "eu-1-id5-sync.com",
+    "type": "vendor",
+    "owner": "ID5 Technology Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "liadm.com",
+    "type": "vendor",
+    "owner": "LiveIntent Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "2mdn.net",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "cookielaw.org",
+    "type": "vendor",
+    "owner": "OneTrust LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "scorecardresearch.com",
+    "type": "vendor",
+    "owner": "comScore, Inc",
+    "category": "Analytics"
+  },
+  {
+    "id": "onetrust.com",
+    "type": "vendor",
+    "owner": "OneTrust LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "lijit.com",
+    "type": "vendor",
+    "owner": "Sovrn Holdings",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sharethrough.com",
+    "type": "vendor",
+    "owner": "Sharethrough, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "teads.tv",
+    "type": "vendor",
+    "owner": "Teads SA",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "everesttech.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "smartadserver.com",
+    "type": "vendor",
+    "owner": "Smartadserver S.A.S",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "gumgum.com",
+    "type": "vendor",
+    "owner": "GumGum",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "1rx.io",
+    "type": "vendor",
+    "owner": "RhythmOne",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "360yield.com",
+    "type": "vendor",
+    "owner": "Improve Digital BV",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ipredictive.com",
+    "type": "vendor",
+    "owner": "Adelphic, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "intentiq.com",
+    "type": "vendor",
+    "owner": "Almondnet Group",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "outbrain.com",
+    "type": "vendor",
+    "owner": "Outbrain",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "contextweb.com",
+    "type": "vendor",
+    "owner": "Pulsepoint, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "a-mo.net",
+    "type": "vendor",
+    "owner": "Monet Engine Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "quantserve.com",
+    "type": "vendor",
+    "owner": "Quantcast Corporation",
+    "category": "Analytics"
+  },
+  {
+    "id": "onetag-sys.com",
+    "type": "vendor",
+    "owner": "OneTag Limited",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rfihub.com",
+    "type": "vendor",
+    "owner": "Zeta Global",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "temu.com",
+    "type": "vendor",
+    "owner": "Pinduoduo Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "agkn.com",
+    "type": "vendor",
+    "owner": "TransUnion LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "eyeota.net",
+    "type": "vendor",
+    "owner": "eyeota Limited",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sitescout.com",
+    "type": "vendor",
+    "owner": "Centro, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sonobi.com",
+    "type": "vendor",
+    "owner": "Sonobi, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "blismedia.com",
+    "type": "vendor",
+    "owner": "Blis Global Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "postrelease.com",
+    "type": "vendor",
+    "owner": "Nativo, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "fwmrm.net",
+    "type": "vendor",
+    "owner": "FreeWheel",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "loopme.me",
+    "type": "vendor",
+    "owner": "Online Media Solutions Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "yieldmo.com",
+    "type": "vendor",
+    "owner": "YieldMo, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rapidedge.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "btloader.com",
+    "type": "vendor",
+    "owner": "Blockthrough Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ad-delivery.net",
+    "type": "vendor",
+    "owner": "easyAd Deutschland GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "inmobi.com",
+    "type": "vendor",
+    "owner": "InMobi Pte Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "smaato.net",
+    "type": "vendor",
+    "owner": "Smaato Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "googletagservices.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "admanmedia.com",
+    "type": "vendor",
+    "owner": "ADman Media",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "dns-finder.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "fastclick.net",
+    "type": "vendor",
+    "owner": "Conversant LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "smilewanted.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "yellowblue.io",
+    "type": "vendor",
+    "owner": "Unity Software Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "seedtag.com",
+    "type": "vendor",
+    "owner": "SEEDTAG ADVERTISING S.L.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ingage.tech",
+    "type": "vendor",
+    "owner": "Insticator",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "opera.com",
+    "type": "vendor",
+    "owner": "Opera Software AS",
+    "category": "Unknown"
+  },
+  {
+    "id": "ccgateway.net",
+    "type": "vendor",
+    "owner": "Clicksco FZ",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "indexww.com",
+    "type": "vendor",
+    "owner": "Index Exchange, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "jwplayer.com",
+    "type": "vendor",
+    "owner": "LongTail Ad Solutions, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "exelator.com",
+    "type": "vendor",
+    "owner": "The Nielsen Company",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "presage.io",
+    "type": "vendor",
+    "owner": "Ogury Limited",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ad.gt",
+    "type": "vendor",
+    "owner": "Audigent",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "hadronid.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "a-mx.com",
+    "type": "vendor",
+    "owner": "Monet Engine Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adkernel.com",
+    "type": "vendor",
+    "owner": "Adkernel, LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "omnitagjs.com",
+    "type": "vendor",
+    "owner": "Adyoulike",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "deepintent.com",
+    "type": "vendor",
+    "owner": "DeepIntent Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "disqus.com",
+    "type": "vendor",
+    "owner": "Disqus, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "trustedstack.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "connatix.com",
+    "type": "vendor",
+    "owner": "Connatix",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "syncingbridge.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "amxrtb.com",
+    "type": "vendor",
+    "owner": "Monet Engine Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "measureadv.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "sharethis.com",
+    "type": "vendor",
+    "owner": "ShareThis, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "primis.tech",
+    "type": "vendor",
+    "owner": "McCann Disciplines Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tracookiepixel.xyz",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "krushmedia.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "parsely.com",
+    "type": "vendor",
+    "owner": "Parsely, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "appier.net",
+    "type": "vendor",
+    "owner": "Appier Group, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "eskimi.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "kueezrtb.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tribalfusion.com",
+    "type": "vendor",
+    "owner": "Exponential Interactive Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rqtrk.eu",
+    "type": "vendor",
+    "owner": "Roq.ad",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "script.ac",
+    "type": "vendor",
+    "owner": "Human Security, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "webcontentassessor.com",
+    "type": "vendor",
+    "owner": "TMT Digital Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sentry-cdn.com",
+    "type": "vendor",
+    "owner": "Functional Software, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "onesignal.com",
+    "type": "vendor",
+    "owner": "OneSignal",
+    "category": "Analytics"
+  },
+  {
+    "id": "jwpsrv.com",
+    "type": "vendor",
+    "owner": "LongTail Ad Solutions, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "minutemedia-prebid.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "digitalaudience.io",
+    "type": "vendor",
+    "owner": "Social Audience B.V.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adroll.com",
+    "type": "vendor",
+    "owner": "AdRoll, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "pmbmonetize.live",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "advolve.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "streamrail.com",
+    "type": "vendor",
+    "owner": "Unity Software Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "unrulymedia.com",
+    "type": "vendor",
+    "owner": "Unruly Group Limited",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "company-target.com",
+    "type": "vendor",
+    "owner": "Demandbase, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bounceexchange.com",
+    "type": "vendor",
+    "owner": "Bounce Exchange",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "betweendigital.com",
+    "type": "vendor",
+    "owner": "SSP Network Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "the-ozone-project.com",
+    "type": "vendor",
+    "owner": "The Ozone Project",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "permutive.app",
+    "type": "vendor",
+    "owner": "Permutive, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "vistarsagency.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adlightning.com",
+    "type": "vendor",
+    "owner": "Ad Lightning, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "permutive.com",
+    "type": "vendor",
+    "owner": "Permutive, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "spotxchange.com",
+    "type": "vendor",
+    "owner": "SpotX, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mgid.com",
+    "type": "vendor",
+    "owner": "MGID Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "iqm.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bttrack.com",
+    "type": "vendor",
+    "owner": "Bidtellect, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "wknd.ai",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "acuityplatform.com",
+    "type": "vendor",
+    "owner": "AcuityAds",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mediago.io",
+    "type": "vendor",
+    "owner": "Baidu, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "pub.network",
+    "type": "vendor",
+    "owner": "Publisher First, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "marphezis.com",
+    "type": "vendor",
+    "owner": "Online Media Solutions Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adgrx.com",
+    "type": "vendor",
+    "owner": "AdGear Technologies Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "optimise.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "socdm.com",
+    "type": "vendor",
+    "owner": "Supership Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sail-horizon.com",
+    "type": "vendor",
+    "owner": "CM Group",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "fsrv.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "t13.io",
+    "type": "vendor",
+    "owner": "Publisher First, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "cdnbasket.net",
+    "type": "vendor",
+    "owner": "Bounce Exchange",
+    "category": "CDN"
+  },
+  {
+    "id": "wurflcloud.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "prmutv.co",
+    "type": "vendor",
+    "owner": "Permutive, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "sail-personalize.com",
+    "type": "vendor",
+    "owner": "CM Group",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "blueconic.net",
+    "type": "vendor",
+    "owner": "BlueConic, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "creative-serving.com",
+    "type": "vendor",
+    "owner": "Platform161",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sascdn.com",
+    "type": "vendor",
+    "owner": "Smartadserver S.A.S",
+    "category": "CDN"
+  },
+  {
+    "id": "ymmobi.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "cdnwidget.com",
+    "type": "vendor",
+    "owner": "CDNWIDGET.COM",
+    "category": "CDN"
+  },
+  {
+    "id": "loudecho.ai",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adition.com",
+    "type": "vendor",
+    "owner": "Virtual Minds AG",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ctnsnet.com",
+    "type": "vendor",
+    "owner": "Crimtan Holdings Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "yieldlab.net",
+    "type": "vendor",
+    "owner": "Virtual Minds AG",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ntv.io",
+    "type": "vendor",
+    "owner": "Nativo, Inc",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "jwpcdn.com",
+    "type": "vendor",
+    "owner": "LongTail Ad Solutions, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "ck-ie.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "rtb.mx",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "e-volution.ai",
+    "type": "vendor",
+    "owner": "Evolution Technologies INC.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "amx1.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bouncex.net",
+    "type": "vendor",
+    "owner": "Bounce Exchange",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "liftdsp.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "pinklion.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "ortb.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "playdigo.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mediarithmics.com",
+    "type": "vendor",
+    "owner": "mediarithmics SAS",
+    "category": "Analytics"
+  },
+  {
+    "id": "visx.net",
+    "type": "vendor",
+    "owner": "YOC AG",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "usablenet.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "stickyadstv.com",
+    "type": "vendor",
+    "owner": "FreeWheel",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "wp.pl",
+    "type": "vendor",
+    "owner": "Wirtualna Polska",
+    "category": "Unknown"
+  },
+  {
+    "id": "viafoura.co",
+    "type": "vendor",
+    "owner": "Viafoura Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "jwpltx.com",
+    "type": "vendor",
+    "owner": "LongTail Ad Solutions, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "brand-display.com",
+    "type": "vendor",
+    "owner": "Knorex Pte. Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "taptapnetworks.com",
+    "type": "vendor",
+    "owner": "TAPTAP DIGITAL, S.L.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tru.am",
+    "type": "vendor",
+    "owner": "trueAnthem Corp",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "shb-sync.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "serverbid.com",
+    "type": "vendor",
+    "owner": "Consumable, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mediagotechnology.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "viafoura.net",
+    "type": "vendor",
+    "owner": "Viafoura Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "html-load.cc",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "adscale.de",
+    "type": "vendor",
+    "owner": "Stroeer Group",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "hybrid.ai",
+    "type": "vendor",
+    "owner": "Hybrid Adtech, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "kameleoon.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "lkqd.net",
+    "type": "vendor",
+    "owner": "Nexstar Media Group",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "onelink.me",
+    "type": "vendor",
+    "owner": "AppsFlyer",
+    "category": "Analytics"
+  },
+  {
+    "id": "bidtheatre.com",
+    "type": "vendor",
+    "owner": "BidTheatre AB",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "avads.net",
+    "type": "vendor",
+    "owner": "AntVoice",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "smartclip.net",
+    "type": "vendor",
+    "owner": "smartclip Europe GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "dmxleo.com",
+    "type": "vendor",
+    "owner": "Dailymotion SA",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "de17a.com",
+    "type": "vendor",
+    "owner": "Delta Projects AB",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "dianomi.com",
+    "type": "vendor",
+    "owner": "Dianomi Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "zephr.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "iqzonertb.live",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ad4m.at",
+    "type": "vendor",
+    "owner": "advanced STORE GmbH",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ap.org",
+    "type": "vendor",
+    "owner": "The Associated Press",
+    "category": "Unknown"
+  },
+  {
+    "id": "google.de",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "gammaplatform.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adsafety.net",
+    "type": "vendor",
+    "owner": "Online Solution Int Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "4dvertible.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "akamaihd.net",
+    "type": "vendor",
+    "owner": "Akamai Technologies",
+    "category": "CDN"
+  },
+  {
+    "id": "erne.co",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "eu-3-id5-sync.com",
+    "type": "vendor",
+    "owner": "ID5 Technology Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "eu-4-id5-sync.com",
+    "type": "vendor",
+    "owner": "ID5 Technology Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "kidpowers.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "pubeasy.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "puzzmo.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "smartstream.tv",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tpcserve.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "amplitude.com",
+    "type": "vendor",
+    "owner": "Amplitude",
+    "category": "Analytics"
+  },
+  {
+    "id": "ebxcdn.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "lemde.fr",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "adobedtm.com",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "omtrdc.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "adswizz.com",
+    "type": "vendor",
+    "owner": "Sirius XM Holdings Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mrf.io",
+    "type": "vendor",
+    "owner": "Marfeel Solutions, S.L.",
+    "category": "Analytics"
+  },
+  {
+    "id": "newsroom.bi",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "adobedc.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "privacy-center.org",
+    "type": "vendor",
+    "owner": "Didomi",
+    "category": "Analytics"
+  },
+  {
+    "id": "streamtheworld.com",
+    "type": "vendor",
+    "owner": "Triton Digital, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "sensic.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "arcpublishing.com",
+    "type": "vendor",
+    "owner": "The Washington Post",
+    "category": "CDN"
+  },
+  {
+    "id": "prisa.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "prisasd.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "prisamedia.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "cloudfront.net",
+    "type": "vendor",
+    "owner": "Amazon Web Services",
+    "category": "CDN"
+  },
+  {
+    "id": "amazonaws.com",
+    "type": "vendor",
+    "owner": "Amazon Web Services",
+    "category": "CDN"
+  },
+  {
+    "id": "cloudflare.com",
+    "type": "vendor",
+    "owner": "Cloudflare, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "jsdelivr.net",
+    "type": "vendor",
+    "owner": "Prospect One",
+    "category": "CDN"
+  },
+  {
+    "id": "criteo.net",
+    "type": "vendor",
+    "owner": "Criteo SA",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "openxcdn.net",
+    "type": "vendor",
+    "owner": "OpenX Technologies Inc",
+    "category": "CDN"
+  },
+  {
+    "id": "privacymanager.io",
+    "type": "vendor",
+    "owner": "LiveRamp Holdings, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "taboola.com",
+    "type": "vendor",
+    "owner": "Taboola, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "richaudience.com",
+    "type": "vendor",
+    "owner": "Rich Audience Technologies",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rtbhouse.com",
+    "type": "vendor",
+    "owner": "RTB House S.A.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "imrworldwide.com",
+    "type": "vendor",
+    "owner": "The Nielsen Company",
+    "category": "Analytics"
+  },
+  {
+    "id": "confiant-integrations.net",
+    "type": "vendor",
+    "owner": "Confiant, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "crazyegg.com",
+    "type": "vendor",
+    "owner": "Crazy Egg, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "zemanta.com",
+    "type": "vendor",
+    "owner": "Outbrain",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "moloco.com",
+    "type": "vendor",
+    "owner": "Moloco Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ipify.org",
+    "type": "vendor",
+    "owner": "ipify.org",
+    "category": "Unknown"
+  },
+  {
+    "id": "piano.io",
+    "type": "vendor",
+    "owner": "Piano Software",
+    "category": "Analytics"
+  },
+  {
+    "id": "anonymised.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "cxense.com",
+    "type": "vendor",
+    "owner": "Piano Software",
+    "category": "Analytics"
+  },
+  {
+    "id": "admatic.de",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "admixer.net",
+    "type": "vendor",
+    "owner": "Admixer Technologies",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "2o7.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "appsflyer.com",
+    "type": "vendor",
+    "owner": "AppsFlyer",
+    "category": "Analytics"
+  },
+  {
+    "id": "speedcurve.com",
+    "type": "vendor",
+    "owner": "SpeedCurve Limited",
+    "category": "Analytics"
+  },
+  {
+    "id": "sophi.io",
+    "type": "vendor",
+    "owner": "The Globe and Mail Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "dailymotion.com",
+    "type": "vendor",
+    "owner": "Dailymotion SA",
+    "category": "CDN"
+  },
+  {
+    "id": "iprom.net",
+    "type": "vendor",
+    "owner": "IPROM, d.o.o.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "insurads.com",
+    "type": "vendor",
+    "owner": "InsurAds",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "cxpublic.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "dm-event.net",
+    "type": "vendor",
+    "owner": "Dailymotion SA",
+    "category": "Analytics"
+  },
+  {
+    "id": "dmcdn.net",
+    "type": "vendor",
+    "owner": "Dailymotion SA",
+    "category": "CDN"
+  },
+  {
+    "id": "tncid.app",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "ads-tinyorbit.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bannerflow.net",
+    "type": "vendor",
+    "owner": "BannerFlow AB",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rcsmetrics.it",
+    "type": "vendor",
+    "owner": "RCS Mediagroup S.p.A",
+    "category": "Analytics"
+  },
+  {
+    "id": "rcsobjects.it",
+    "type": "vendor",
+    "owner": "RCS Mediagroup S.p.A",
+    "category": "CDN"
+  },
+  {
+    "id": "corriereobjects.it",
+    "type": "vendor",
+    "owner": "RCS Mediagroup S.p.A",
+    "category": "CDN"
+  },
+  {
+    "id": "pangle-ads.com",
+    "type": "vendor",
+    "owner": "ByteDance Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "rcs.it",
+    "type": "vendor",
+    "owner": "RCS Mediagroup S.p.A",
+    "category": "Unknown"
+  },
+  {
+    "id": "rcspubblicita.it",
+    "type": "vendor",
+    "owner": "RCS Mediagroup S.p.A",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "facebook.com",
+    "type": "vendor",
+    "owner": "Facebook, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bing.com",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "clarity.ms",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "Analytics"
+  },
+  {
+    "id": "googleadservices.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tiktok.com",
+    "type": "vendor",
+    "owner": "ByteDance Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tiktokw.us",
+    "type": "vendor",
+    "owner": "ByteDance Ltd.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mediavine.com",
+    "type": "vendor",
+    "owner": "Mediavine, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tremorhub.com",
+    "type": "vendor",
+    "owner": "Telaria",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "4dex.io",
+    "type": "vendor",
+    "owner": "Adagio",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "applovin.com",
+    "type": "vendor",
+    "owner": "AppLovin Corporation",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "opecloud.com",
+    "type": "vendor",
+    "owner": "TripleLift",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "dwin1.com",
+    "type": "vendor",
+    "owner": "Awin AG",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "roeyecdn.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "roeye.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "anonm.io",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "iubenda.com",
+    "type": "vendor",
+    "owner": "iubenda s.r.l.",
+    "category": "Analytics"
+  },
+  {
+    "id": "brightcove.net",
+    "type": "vendor",
+    "owner": "Brightcove, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "brightcove.com",
+    "type": "vendor",
+    "owner": "Brightcove, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "gigya.com",
+    "type": "vendor",
+    "owner": "Gigya Inc",
+    "category": "Analytics"
+  },
+  {
+    "id": "preciso.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "mainadv.com",
+    "type": "vendor",
+    "owner": "MainADV",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "2trk.info",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "tangooserver.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "gedi.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "gedidigital.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "kataweb.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "repstatic.it",
+    "type": "vendor",
+    "owner": "Elemedia S.p.A.",
+    "category": "CDN"
+  },
+  {
+    "id": "gedistatic.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "gelestatic.it",
+    "type": "vendor",
+    "owner": "Elemedia S.p.A.",
+    "category": "CDN"
+  },
+  {
+    "id": "lescienze.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "nationalgeographic.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "paa-reporting-advertising.amazon",
+    "type": "vendor",
+    "owner": "Amazon Technologies, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "run.app",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "solocpm.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "youtube.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "matheranalytics.com",
+    "type": "vendor",
+    "owner": "Mather Economics",
+    "category": "Analytics"
+  },
+  {
+    "id": "navdmp.com",
+    "type": "vendor",
+    "owner": "Navegg S.A.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "turner.com",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "Unknown"
+  },
+  {
+    "id": "uol.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "undertone.com",
+    "type": "vendor",
+    "owner": "Undertone Networks",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "cootlogix.com",
+    "type": "vendor",
+    "owner": "Vidazoo Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "quantcount.com",
+    "type": "vendor",
+    "owner": "Quantcast Corporation",
+    "category": "Analytics"
+  },
+  {
+    "id": "springserve.com",
+    "type": "vendor",
+    "owner": "SpringServe, LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "trustarc.com",
+    "type": "vendor",
+    "owner": "TrustArc Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "infolinks.com",
+    "type": "vendor",
+    "owner": "Infolink Media LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "recaptcha.net",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "clickagy.com",
+    "type": "vendor",
+    "owner": "Clickagy",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "truste.com",
+    "type": "vendor",
+    "owner": "TrustArc Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "boltdns.net",
+    "type": "vendor",
+    "owner": "Brightcove, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "acint.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sape.ru",
+    "type": "vendor",
+    "owner": "LTD Sape",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "bidberry.net",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "axonix.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "aljazeera.net",
+    "type": "vendor",
+    "owner": "Al Jazeera Media Network",
+    "category": "Unknown"
+  },
+  {
+    "id": "bedrockplatform.bid",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "sng.link",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "thehlive.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "withgoogle.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "typekit.net",
+    "type": "vendor",
+    "owner": "Adobe Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "licdn.com",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "CDN"
+  },
+  {
+    "id": "sentry.io",
+    "type": "vendor",
+    "owner": "Functional Software, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "googleusercontent.com",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "on.aws",
+    "type": "vendor",
+    "owner": "Amazon Web Services",
+    "category": "CDN"
+  },
+  {
+    "id": "npttech.com",
+    "type": "vendor",
+    "owner": "Piano Software",
+    "category": "Analytics"
+  },
+  {
+    "id": "tappx.com",
+    "type": "vendor",
+    "owner": "Tappcelator Media S.L.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "i-scmp.com",
+    "type": "vendor",
+    "owner": "SCMP",
+    "category": "CDN"
+  },
+  {
+    "id": "ml314.com",
+    "type": "vendor",
+    "owner": "Bombora Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "adsafeprotected.com",
+    "type": "vendor",
+    "owner": "Integral Ad Science, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "go-mpulse.net",
+    "type": "vendor",
+    "owner": "Akamai Technologies",
+    "category": "Analytics"
+  },
+  {
+    "id": "im-apps.net",
+    "type": "vendor",
+    "owner": "Intimate Merger, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "akstat.io",
+    "type": "vendor",
+    "owner": "Akamai Technologies",
+    "category": "Analytics"
+  },
+  {
+    "id": "aniview.com",
+    "type": "vendor",
+    "owner": "ANIVIEW LTD",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "travelaudience.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "amazon.dev",
+    "type": "vendor",
+    "owner": "Amazon Technologies, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "mygaru.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "mgaru.dev",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "admaster.cc",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "clmbtech.com",
+    "type": "vendor",
+    "owner": "Times Internet Ltd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ibeat-analytics.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "rediads.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "indiatimes.com",
+    "type": "vendor",
+    "owner": "Times Internet Ltd",
+    "category": "Unknown"
+  },
+  {
+    "id": "toiimg.com",
+    "type": "vendor",
+    "owner": "Times Internet Ltd",
+    "category": "CDN"
+  },
+  {
+    "id": "tvid.in",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "91-img.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "akamaized.net",
+    "type": "vendor",
+    "owner": "Akamai Technologies",
+    "category": "CDN"
+  },
+  {
+    "id": "filmipop.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "turncdn.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "fontawesome.com",
+    "type": "vendor",
+    "owner": "Fonticons Inc",
+    "category": "CDN"
+  },
+  {
+    "id": "appboycdn.com",
+    "type": "vendor",
+    "owner": "Braze, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "braze.com",
+    "type": "vendor",
+    "owner": "Braze, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "trueanthem.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "knotch-cdn.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "knotch.it",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "knotch.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Analytics"
+  },
+  {
+    "id": "pix.pub",
+    "type": "vendor",
+    "owner": "MarketCast LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "atp.fox",
+    "type": "vendor",
+    "owner": "Fox Corporation",
+    "category": "Unknown"
+  },
+  {
+    "id": "dt.fox",
+    "type": "vendor",
+    "owner": "Fox Corporation",
+    "category": "Unknown"
+  },
+  {
+    "id": "strike.fox",
+    "type": "vendor",
+    "owner": "Fox Corporation",
+    "category": "Unknown"
+  },
+  {
+    "id": "wealthygeezwell.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "foxbusiness.com",
+    "type": "vendor",
+    "owner": "Fox Corporation",
+    "category": "Unknown"
+  },
+  {
+    "id": "rezync.com",
+    "type": "vendor",
+    "owner": "Zeta Global",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "stripe.com",
+    "type": "vendor",
+    "owner": "Stripe, Inc",
+    "category": "Analytics"
+  },
+  {
+    "id": "ampproject.org",
+    "type": "vendor",
+    "owner": "Google LLC",
+    "category": "CDN"
+  },
+  {
+    "id": "clean.gg",
+    "type": "vendor",
+    "owner": "Human Security, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "boomtrain.com",
+    "type": "vendor",
+    "owner": "Zeta Global",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "stripe.network",
+    "type": "vendor",
+    "owner": "Stripe, Inc",
+    "category": "CDN"
+  },
+  {
+    "id": "onetrust.io",
+    "type": "vendor",
+    "owner": "OneTrust LLC",
+    "category": "Analytics"
+  },
+  {
+    "id": "zqtk.net",
+    "type": "vendor",
+    "owner": "comScore, Inc",
+    "category": "Analytics"
+  },
+  {
+    "id": "litix.io",
+    "type": "vendor",
+    "owner": "Mux, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "warnermediacdn.com",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "ngtv.io",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "cnn.io",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "wmcdp.io",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "brightline.tv",
+    "type": "vendor",
+    "owner": "BrightLine Partners LLC",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "discomax.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "max.com",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "Unknown"
+  },
+  {
+    "id": "ugdturner.com",
+    "type": "vendor",
+    "owner": "Warner Bros. Discovery, Inc.",
+    "category": "Unknown"
+  },
+  {
+    "id": "33across.com",
+    "type": "vendor",
+    "owner": "33Across, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "twitter.com",
+    "type": "vendor",
+    "owner": "Twitter, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "ads-twitter.com",
+    "type": "vendor",
+    "owner": "Twitter, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "t.co",
+    "type": "vendor",
+    "owner": "Twitter, Inc.",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "thrtle.com",
+    "type": "vendor",
+    "owner": "Throtle",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tiqcdn.com",
+    "type": "vendor",
+    "owner": "Tealium Inc.",
+    "category": "CDN"
+  },
+  {
+    "id": "imgix.net",
+    "type": "vendor",
+    "owner": "Zebrafish Labs",
+    "category": "CDN"
+  },
+  {
+    "id": "clarium.io",
+    "type": "vendor",
+    "owner": "ClarityAd",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "tealiumiq.com",
+    "type": "vendor",
+    "owner": "Tealium Inc.",
+    "category": "Analytics"
+  },
+  {
+    "id": "adnxs-simple.com",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "Ad Motivated Tracking"
+  },
+  {
+    "id": "megaphone.fm",
+    "type": "vendor",
+    "owner": "Spotify AB",
+    "category": "CDN"
+  },
+  {
+    "id": "asadcdn.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "CDN"
+  },
+  {
+    "id": "azureedge.net",
+    "type": "vendor",
+    "owner": "Microsoft Corporation",
+    "category": "CDN"
+  },
+  {
+    "id": "pa-cd.com",
+    "type": "vendor",
+    "owner": "Unknown",
+    "category": "Unknown"
+  },
+  {
+    "id": "ebu.io",
+    "type": "vendor",
+    "owner": "European Broadcasting Union",
+    "category": "Unknown"
+  }
 ]
