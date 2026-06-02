@@ -2,40 +2,133 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cookie Vendor Network behind popular English News Outlets in June 2026</title>
+<title>Cookie Vendor Network — Global News Outlets</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #f5f5f0; color: #111; font-family: "Inter", "Helvetica Neue", Arial, sans-serif; overflow: hidden; }
-  #header { position: fixed; top: 0; left: 0; right: 0; z-index: 20; padding: 16px 24px; background: #f5f5f0; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: space-between; }
-  #header h1 { font-size: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #111; }
-  #header p { font-size: 11px; color: #888; margin-top: 2px; }
-  #controls { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
-  .filter-btn { padding: 5px 12px; border-radius: 20px; border: 1px solid #ccc; background: #fff; color: #555; font-size: 11px; cursor: pointer; transition: all 0.2s; }
-  .filter-btn:hover { background: #eee; }
+  body { background: #f5f5f0; color: #111; font-family: "Inter", sans-serif; overflow: hidden; }
+
+  #header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 20;
+    padding: 14px 22px; background: #f5f5f0; border-bottom: 1px solid #ddd;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  #header h1 { font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #111; }
+  #header p  { font-size: 11px; color: #999; margin-top: 2px; }
+
+  #controls { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+  .filter-btn {
+    padding: 4px 12px; border-radius: 20px; border: 1px solid #ccc;
+    background: #fff; color: #666; font-size: 11px; cursor: pointer; transition: all 0.15s;
+  }
+  .filter-btn:hover  { background: #eee; }
   .filter-btn.active { background: #111; border-color: #111; color: #fff; }
-  #canvas { width: 100vw; height: 100vh; }
-  #panel { position: fixed; top: 0; right: -360px; width: 340px; height: 100vh; background: #fff; border-left: 1px solid #ddd; z-index: 30; transition: right 0.3s ease; overflow-y: auto; padding: 24px; }
+
+  #right-controls { display: flex; gap: 6px; align-items: center; margin-left: 10px; }
+  .ctrl-btn {
+    padding: 4px 11px; border-radius: 20px; border: 1px solid #ccc;
+    background: #fff; color: #666; font-size: 11px; cursor: pointer; transition: all 0.15s;
+  }
+  .ctrl-btn:hover { background: #eee; }
+  .ctrl-btn.active { background: #c9a86c; border-color: #c9a86c; color: #fff; }
+
+  #canvas { width: 100vw; height: 100vh; display: block; }
+
+  /* ── SIDE PANEL ── */
+  #panel {
+    position: fixed; top: 0; right: -380px; width: 360px; height: 100vh;
+    background: #faf9f5; border-left: 1px solid #ddd; z-index: 30;
+    transition: right 0.28s ease; overflow-y: auto; padding: 22px 20px;
+  }
   #panel.open { right: 0; }
-  #panel-close { position: absolute; top: 16px; right: 16px; cursor: pointer; font-size: 18px; color: #999; background: none; border: none; }
+  #panel-close {
+    position: absolute; top: 14px; right: 14px; cursor: pointer;
+    font-size: 18px; color: #bbb; background: none; border: none; line-height: 1;
+  }
   #panel-close:hover { color: #111; }
-  #panel-logo { width: 48px; height: 48px; border-radius: 10px; object-fit: contain; border: 1px solid #eee; margin-bottom: 12px; background: #f9f9f9; padding: 4px; }
-  #panel-title { font-size: 18px; font-weight: 700; color: #111; margin-bottom: 4px; word-break: break-all; }
-  #panel-subtitle { font-size: 12px; color: #888; margin-bottom: 16px; }
-  .panel-badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-bottom: 16px; }
-  .badge-outlet  { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-  .badge-ad      { background: #fde8e8; color: #c0392b; border: 1px solid #e74c3c; }
-  .badge-analytics { background: #e8f0fe; color: #1a56db; border: 1px solid #4285f4; }
-  .badge-unknown { background: #f0f0f0; color: #666; border: 1px solid #ccc; }
-  .panel-section { margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
-  .panel-section h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #999; margin-bottom: 10px; }
-  .connection-item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 6px; margin-bottom: 4px; font-size: 12px; color: #333; background: #f9f9f9; cursor: pointer; transition: background 0.15s; }
-  .connection-item:hover { background: #eee; }
-  .connection-logo { width: 20px; height: 20px; border-radius: 4px; object-fit: contain; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
-  #legend { position: fixed; bottom: 20px; left: 20px; font-size: 11px; color: #888; z-index: 10; background: rgba(245,245,240,0.9); padding: 10px 14px; border-radius: 8px; border: 1px solid #ddd; }
-  #legend div { display: flex; align-items: center; gap: 8px; margin: 4px 0; }
-  #legend .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  #stats { position: fixed; bottom: 20px; right: 20px; font-size: 11px; color: #aaa; text-align: right; z-index: 10; }
-  #tooltip { position: fixed; background: rgba(255,255,255,0.97); border: 1px solid #ddd; border-radius: 6px; padding: 8px 12px; font-size: 11px; pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 50; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 220px; }
+
+  .panel-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; margin-top: 4px; }
+  #panel-logo {
+    width: 44px; height: 44px; border-radius: 10px; object-fit: contain;
+    border: 1px solid #eee; background: #fff; padding: 4px; flex-shrink: 0;
+  }
+  #panel-title { font-size: 17px; font-weight: 700; color: #111; word-break: break-all; line-height: 1.25; }
+  #panel-owner { font-size: 11px; color: #999; margin-top: 2px; }
+
+  .panel-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px;
+    font-size: 11px; font-weight: 600; margin-bottom: 14px;
+  }
+  .badge-outlet   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
+  .badge-ad       { background: #fde8e8; color: #c0392b; border: 1px solid #e74c3c; }
+  .badge-analytics{ background: #e8f0fe; color: #1a56db; border: 1px solid #4285f4; }
+  .badge-cdn      { background: #e8f7ee; color: #1a7a3f; border: 1px solid #27ae60; }
+  .badge-unknown  { background: #f0f0f0; color: #666;    border: 1px solid #ccc; }
+
+  .panel-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid #eee; }
+  .panel-section h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; margin-bottom: 9px; }
+
+  .conn-item {
+    display: flex; align-items: center; gap: 9px; padding: 6px 8px;
+    border-radius: 6px; margin-bottom: 3px; font-size: 12px; color: #333;
+    background: #f4f3ee; cursor: pointer; transition: background 0.12s;
+  }
+  .conn-item:hover { background: #ede9e0; }
+  .conn-logo { width: 20px; height: 20px; border-radius: 4px; object-fit: contain; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
+  .conn-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .conn-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .conn-owner{ font-size: 10px; color: #aaa; margin-top: 1px; }
+
+  /* ── TOP 10 PANEL ── */
+  #top10-panel {
+    position: fixed; top: 56px; left: -310px; width: 290px;
+    background: #faf9f5; border-right: 1px solid #ddd; z-index: 25;
+    transition: left 0.28s ease; overflow-y: auto;
+    padding: 16px 16px; height: calc(100vh - 56px);
+  }
+  #top10-panel.open { left: 0; }
+  #top10-panel h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; margin-bottom: 14px; }
+  .top10-item {
+    display: flex; align-items: center; gap: 10px; padding: 7px 8px;
+    border-radius: 6px; margin-bottom: 4px; cursor: pointer;
+    background: #f4f3ee; transition: background 0.12s;
+  }
+  .top10-item:hover { background: #ede9e0; }
+  .top10-rank { font-size: 11px; font-weight: 700; color: #ccc; width: 18px; text-align: right; flex-shrink: 0; }
+  .top10-rank.gold   { color: #c9a86c; }
+  .top10-rank.silver { color: #aaa; }
+  .top10-rank.bronze { color: #b87333; }
+  .top10-logo { width: 24px; height: 24px; border-radius: 5px; object-fit: contain; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
+  .top10-info { flex: 1; min-width: 0; }
+  .top10-domain { font-size: 12px; font-weight: 600; color: #222; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top10-owner  { font-size: 10px; color: #aaa; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .top10-bar-wrap { margin-top: 3px; background: #e8e4d8; border-radius: 2px; height: 3px; }
+  .top10-bar { background: #c9a86c; height: 3px; border-radius: 2px; }
+  .top10-count { font-size: 11px; font-weight: 700; color: #c9a86c; flex-shrink: 0; }
+
+  /* ── TOOLTIP ── */
+  #tooltip {
+    position: fixed; background: rgba(255,255,255,0.97); border: 1px solid #ddd;
+    border-radius: 6px; padding: 8px 12px; font-size: 11px; pointer-events: none;
+    opacity: 0; transition: opacity 0.08s; z-index: 99;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 240px; line-height: 1.5;
+  }
+  .tt-logo { width: 22px; height: 22px; border-radius: 4px; object-fit: contain; border: 1px solid #eee; background: #fff; float: left; margin-right: 7px; margin-top: 1px; }
+
+  /* ── LEGEND ── */
+  #legend {
+    position: fixed; bottom: 18px; left: 18px; font-size: 11px; color: #888; z-index: 10;
+    background: rgba(245,245,240,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid #ddd;
+  }
+  #legend div { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
+  #legend .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+
+  #stats { position: fixed; bottom: 18px; right: 18px; font-size: 11px; color: #bbb; text-align: right; z-index: 10; line-height: 1.6; }
+
+  #loading {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-size: 13px; color: #aaa; letter-spacing: 0.05em;
+  }
 </style>
 </head>
 <body>
@@ -44,197 +137,373 @@
     <h1>Cookie Vendor Network</h1>
     <p>Third-party tracking domains behind 20 global news outlets</p>
   </div>
-  <div id="controls">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="Ad Motivated Tracking">Ad Tracking</button>
-    <button class="filter-btn" data-filter="Analytics">Analytics</button>
-    <button class="filter-btn" data-filter="CDN">CDN</button>
-    <button class="filter-btn" data-filter="Unknown">Unknown</button>
+  <div style="display:flex;align-items:center;gap:8px">
+    <div id="controls">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Ad Motivated Tracking">Ad Tracking</button>
+      <button class="filter-btn" data-filter="Analytics">Analytics</button>
+      <button class="filter-btn" data-filter="CDN">CDN</button>
+      <button class="filter-btn" data-filter="Unknown">Unknown</button>
+    </div>
+    <div id="right-controls">
+      <button class="ctrl-btn" id="btn-top10">Top 10</button>
+      <button class="ctrl-btn" id="btn-freeze">Freeze</button>
+      <button class="ctrl-btn" id="btn-reset">Reset</button>
+    </div>
   </div>
 </div>
+
+<div id="top10-panel">
+  <h2>Top 10 Vendors</h2>
+  <div id="top10-list"></div>
+</div>
+
+<div id="loading">Loading network…</div>
 <svg id="canvas"></svg>
+
 <div id="panel">
-  <button id="panel-close">&#x2715;</button>
-  <img id="panel-logo" src="" alt="">
-  <div id="panel-title"></div>
-  <div id="panel-subtitle"></div>
+  <button id="panel-close">✕</button>
+  <div class="panel-head">
+    <img id="panel-logo" src="" alt="">
+    <div>
+      <div id="panel-title"></div>
+      <div id="panel-owner"></div>
+    </div>
+  </div>
   <div id="panel-badge-wrap"></div>
   <div class="panel-section">
     <h3 id="panel-connections-label">Connections</h3>
     <div id="panel-connections"></div>
   </div>
 </div>
+
 <div id="tooltip"></div>
+
 <div id="legend">
-  <div><div class="dot" style="background:#f0a500"></div> News Outlet</div>
+  <div><div class="dot" style="background:#c9a86c"></div> News Outlet</div>
   <div><div class="dot" style="background:#e74c3c"></div> Ad Tracking</div>
-  <div><div class="dot" style="background:#4285f4"></div> Analytics / CDN</div>
-  <div><div class="dot" style="background:#aaa"></div> Unknown Vendor</div>
+  <div><div class="dot" style="background:#4285f4"></div> Analytics</div>
+  <div><div class="dot" style="background:#27ae60"></div> CDN</div>
+  <div><div class="dot" style="background:#aaa"></div> Unknown</div>
 </div>
 <div id="stats">
   <div id="stat-nodes"></div>
   <div id="stat-edges"></div>
+  <div id="stat-sim">simulating…</div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script>
-const WIDTH = window.innerWidth;
+const WIDTH  = window.innerWidth;
 const HEIGHT = window.innerHeight;
 const svg = d3.select("#canvas").attr("width", WIDTH).attr("height", HEIGHT);
-const g = svg.append("g");
-svg.call(d3.zoom().scaleExtent([0.05, 10]).on("zoom", e => g.attr("transform", e.transform)));
-const tooltip = document.getElementById("tooltip");
-const panel = document.getElementById("panel");
-let allNodes = [], allEdges = [], sim;
-let selectedId = null;
+const g   = svg.append("g");
+svg.call(d3.zoom().scaleExtent([0.03, 12]).on("zoom", e => g.attr("transform", e.transform)));
 
-function logoUrl(domain) { return "https://logo.clearbit.com/" + domain; }
+const tooltip = document.getElementById("tooltip");
+const panel   = document.getElementById("panel");
+let allNodes = [], allEdges = [], sim;
+let selectedId = null, frozen = false;
+
+function logoUrl(d) { return "https://logo.clearbit.com/" + d; }
+
 function nodeColor(d) {
-  if (d.type === "outlet") return "#f0a500";
-  const cat = (d.category || "").toLowerCase();
-  if (cat.includes("ad")) return "#e74c3c";
-  if (cat.includes("analytics") || cat.includes("cdn") || cat.includes("embedded")) return "#4285f4";
-  return "#aaa";
+  if (d.type === "outlet") return "#c9a86c";
+  const c = (d.category || "").toLowerCase();
+  if (c.includes("ad"))        return "#e74c3c";
+  if (c.includes("analytics")) return "#4285f4";
+  if (c.includes("cdn"))       return "#27ae60";
+  return "#bbb";
 }
-function nodeRadius(d, cc) {
-  if (d.type === "outlet") return 16;
+
+function nodeR(d, cc) {
+  if (d.type === "outlet") return 15;
   const c = cc[d.id] || 1;
-  return Math.max(5, Math.min(20, 4 + c * 1.5));
+  return Math.max(5, Math.min(19, 3.5 + c * 1.5));
 }
+
 function badgeClass(d) {
   if (d.type === "outlet") return "badge-outlet";
-  const cat = (d.category || "").toLowerCase();
-  if (cat.includes("ad")) return "badge-ad";
-  if (cat.includes("analytics") || cat.includes("cdn")) return "badge-analytics";
+  const c = (d.category || "").toLowerCase();
+  if (c.includes("ad")) return "badge-ad";
+  if (c.includes("analytics")) return "badge-analytics";
+  if (c.includes("cdn")) return "badge-cdn";
   return "badge-unknown";
 }
 function badgeLabel(d) {
   if (d.type === "outlet") return "News Outlet";
-  const cat = (d.category || "").toLowerCase();
-  if (cat.includes("ad")) return "Ad Tracking";
-  if (cat.includes("analytics")) return "Analytics";
-  if (cat.includes("cdn")) return "CDN";
+  const c = (d.category || "").toLowerCase();
+  if (c.includes("ad")) return "Ad Tracking";
+  if (c.includes("analytics")) return "Analytics";
+  if (c.includes("cdn")) return "CDN";
   return "Unknown";
 }
+
+/* ── tooltip logo image helper ── */
+function makeTTLogo(domain) {
+  return "<img class='tt-logo' src='" + logoUrl(domain) + "' onerror=\"this.style.display='none'\">";
+}
+
+/* ── panel ── */
 function closePanel() { panel.classList.remove("open"); }
+
 function openPanel(d, edges, cc) {
-  const connectedEdges = edges.filter(e => {
+  const conEdges = edges.filter(e => {
     const s = typeof e.source === "object" ? e.source.id : e.source;
     const t = typeof e.target === "object" ? e.target.id : e.target;
     return s === d.id || t === d.id;
   });
-  const connectedNodes = connectedEdges.map(e => {
+  const conIds = conEdges.map(e => {
     const s = typeof e.source === "object" ? e.source.id : e.source;
     const t = typeof e.target === "object" ? e.target.id : e.target;
     return s === d.id ? t : s;
   });
-  const logoEl = document.getElementById("panel-logo");
-  logoEl.style.display = "block";
-  logoEl.src = logoUrl(d.id);
-  logoEl.onerror = function() { this.style.display = "none"; };
+
+  const logo = document.getElementById("panel-logo");
+  logo.src = logoUrl(d.id);
+  logo.onerror = function() { this.style.display = "none"; };
+  logo.style.display = "block";
+
   document.getElementById("panel-title").textContent = d.id;
-  document.getElementById("panel-subtitle").textContent = d.owner || "";
-  document.getElementById("panel-badge-wrap").innerHTML = "<span class='panel-badge " + badgeClass(d) + "'>" + badgeLabel(d) + "</span>";
-  const label = d.type === "outlet" ? "Vendors tracking this site (" + connectedNodes.length + ")" : "Appears on these outlets (" + connectedNodes.length + ")";
-  document.getElementById("panel-connections-label").textContent = label;
+  document.getElementById("panel-owner").textContent = (d.owner && d.owner !== "Unknown") ? d.owner : "";
+  document.getElementById("panel-badge-wrap").innerHTML =
+    "<span class='panel-badge " + badgeClass(d) + "'>" + badgeLabel(d) + "</span>";
+
+  document.getElementById("panel-connections-label").textContent =
+    d.type === "outlet"
+      ? "Vendors tracking this site (" + conIds.length + ")"
+      : "Appears on (" + conIds.length + ") outlets";
+
   const container = document.getElementById("panel-connections");
   container.innerHTML = "";
-  connectedNodes.forEach(nid => {
+  conIds.forEach(nid => {
     const n = allNodes.find(x => x.id === nid);
     if (!n) return;
     const item = document.createElement("div");
-    item.className = "connection-item";
+    item.className = "conn-item";
+
+    // logo
     const img = document.createElement("img");
-    img.className = "connection-logo";
+    img.className = "conn-logo";
     img.src = logoUrl(nid);
-    img.onerror = function() { this.style.display = "none"; };
-    const span = document.createElement("span");
-    span.innerHTML = nid + (n.owner ? " <span style='color:#aaa'>· " + n.owner + "</span>" : "");
+    img.onerror = function() {
+      this.style.display = "none";
+      const dot = document.createElement("div");
+      dot.className = "conn-dot";
+      dot.style.background = nodeColor(n);
+      item.insertBefore(dot, item.firstChild);
+    };
+
+    const info = document.createElement("div");
+    info.style.flex = "1"; info.style.minWidth = "0";
+    info.innerHTML = "<div class='conn-name'>" + nid + "</div>" +
+      ((n.owner && n.owner !== "Unknown") ? "<div class='conn-owner'>" + n.owner + "</div>" : "");
+
     item.appendChild(img);
-    item.appendChild(span);
-    item.addEventListener("click", () => { selectedId = nid; openPanel(n, allEdges, cc); highlightNode(nid); });
+    item.appendChild(info);
+    item.addEventListener("click", () => {
+      selectedId = nid; openPanel(n, allEdges, cc); highlightNode(nid);
+    });
     container.appendChild(item);
   });
   panel.classList.add("open");
 }
+
+/* ── highlight ── */
 function highlightNode(id) {
-  const connectedIds = new Set();
+  const conn = new Set();
   allEdges.forEach(e => {
     const s = typeof e.source === "object" ? e.source.id : e.source;
     const t = typeof e.target === "object" ? e.target.id : e.target;
-    if (s === id) connectedIds.add(t);
-    if (t === id) connectedIds.add(s);
+    if (s === id) conn.add(t);
+    if (t === id) conn.add(s);
   });
-  connectedIds.add(id);
-  g.selectAll("circle").attr("opacity", d => connectedIds.has(d.id) ? 1 : 0.08);
+  conn.add(id);
+  g.selectAll("circle").attr("opacity", d => conn.has(d.id) ? 1 : 0.06);
   g.selectAll("line").attr("opacity", e => {
     const s = typeof e.source === "object" ? e.source.id : e.source;
     const t = typeof e.target === "object" ? e.target.id : e.target;
-    return (s === id || t === id) ? 0.8 : 0.03;
+    return (s === id || t === id) ? 0.75 : 0.02;
   });
-  g.selectAll("text").attr("opacity", d => connectedIds.has(d.id) ? 1 : 0.08);
+  g.selectAll(".n-label").attr("opacity", d => conn.has(d.id) ? 1 : 0.02);
 }
 function resetHighlight() {
   g.selectAll("circle").attr("opacity", 1);
-  g.selectAll("line").attr("opacity", 0.15);
-  g.selectAll("text").attr("opacity", 1);
+  g.selectAll("line").attr("opacity", 0.13);
+  g.selectAll(".n-label").attr("opacity", d => d.type === "outlet" ? 1 : 0);
 }
+
+/* ── draw ── */
 function draw(nodes, edges, cc) {
   g.selectAll("*").remove();
-  const linkSel = g.append("g").selectAll("line").data(edges).enter().append("line")
-    .attr("stroke", "#ccc").attr("stroke-width", 0.8).attr("opacity", 0.15);
-  const nodeSel = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
-    .attr("r", d => nodeRadius(d, cc))
+
+  const link = g.append("g").selectAll("line").data(edges).enter().append("line")
+    .attr("stroke", "#d0cdc4").attr("stroke-width", 0.7).attr("opacity", 0.13);
+
+  const node = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
+    .attr("r", d => nodeR(d, cc))
     .attr("fill", d => nodeColor(d))
-    .attr("stroke", d => d.type === "outlet" ? "#111" : "#fff")
-    .attr("stroke-width", d => d.type === "outlet" ? 2 : 0.5)
+    .attr("stroke", d => d.type === "outlet" ? "#8a6d35" : "#fff")
+    .attr("stroke-width", d => d.type === "outlet" ? 1.5 : 0.4)
     .style("cursor", "pointer")
     .call(d3.drag()
-      .on("start", (event, d) => { if (!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
-      .on("drag", (event, d) => { d.fx = event.x; d.fy = event.y; })
-      .on("end", (event, d) => { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+      .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
+      .on("drag",  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+      .on("end",   (ev, d) => { if (!ev.active) sim.alphaTarget(0); if (!frozen) { d.fx = null; d.fy = null; } })
     )
-    .on("mouseover", (event, d) => {
+    .on("mouseover", (ev, d) => {
       const c = edges.filter(e => {
         const s = typeof e.source === "object" ? e.source.id : e.source;
         const t = typeof e.target === "object" ? e.target.id : e.target;
         return s === d.id || t === d.id;
       }).length;
-      tooltip.innerHTML = "<strong>" + d.id + "</strong><br>" + (d.owner ? d.owner + "<br>" : "") + (d.category ? "<span style='color:#888'>" + d.category + "</span><br>" : "") + c + " connection" + (c !== 1 ? "s" : "");
+      tooltip.innerHTML =
+        makeTTLogo(d.id) +
+        "<strong>" + d.id + "</strong><br>" +
+        ((d.owner && d.owner !== "Unknown") ? "<span style='color:#888'>" + d.owner + "</span><br>" : "") +
+        "<span style='color:#bbb'>" + (d.category || "Unknown") + " · " + c + " connection" + (c !== 1 ? "s" : "") + "</span>";
       tooltip.style.opacity = 1;
     })
-    .on("mousemove", event => { tooltip.style.left = (event.clientX + 14) + "px"; tooltip.style.top = (event.clientY - 10) + "px"; })
-    .on("mouseout", () => { tooltip.style.opacity = 0; })
-    .on("click", (event, d) => { event.stopPropagation(); selectedId = d.id; openPanel(d, edges, cc); highlightNode(d.id); });
-  const labelSel = g.append("g").selectAll("text").data(nodes.filter(n => n.type === "outlet")).enter().append("text")
+    .on("mousemove", ev => { tooltip.style.left = (ev.clientX + 15) + "px"; tooltip.style.top = (ev.clientY - 10) + "px"; })
+    .on("mouseout",  () => { tooltip.style.opacity = 0; })
+    .on("click", (ev, d) => { ev.stopPropagation(); selectedId = d.id; openPanel(d, edges, cc); highlightNode(d.id); });
+
+  const label = g.append("g").selectAll("text").data(nodes).enter().append("text")
+    .attr("class", "n-label")
     .text(d => d.id)
-    .attr("font-size", "9px").attr("font-family", "Inter, sans-serif").attr("fill", "#333")
-    .attr("text-anchor", "middle").attr("dy", d => -nodeRadius(d, cc) - 5)
+    .attr("font-size", d => d.type === "outlet" ? "9.5px" : "8px")
+    .attr("font-family", "Inter, sans-serif")
+    .attr("fill", d => d.type === "outlet" ? "#5a3e1b" : "#666")
+    .attr("text-anchor", "middle")
+    .attr("dy", d => -(nodeR(d, cc) + 4))
+    .attr("opacity", d => d.type === "outlet" ? 1 : 0)
     .style("pointer-events", "none");
+
   svg.on("click", () => { if (selectedId) { selectedId = null; closePanel(); resetHighlight(); } });
+
   sim.nodes(nodes);
   sim.force("link").links(edges);
   sim.alpha(1).restart();
+
   sim.on("tick", () => {
-    linkSel.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-    nodeSel.attr("cx", d => d.x).attr("cy", d => d.y);
-    labelSel.attr("x", d => d.x).attr("y", d => d.y);
+    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+    node.attr("cx", d => d.x).attr("cy", d => d.y);
+    label.attr("x", d => d.x).attr("y", d => d.y);
+  });
+
+  sim.on("end", () => {
+    document.getElementById("stat-sim").textContent = "settled ✓";
+    nodes.forEach(d => { d.fx = d.x; d.fy = d.y; });
+    frozen = true;
+    document.getElementById("btn-freeze").textContent = "Unfreeze";
+    document.getElementById("btn-freeze").classList.add("active");
   });
 }
+
+/* ── top 10 ── */
+function buildTop10(nodes, edges) {
+  const cc = {};
+  edges.forEach(e => {
+    const t = typeof e.target === "object" ? e.target.id : e.target;
+    cc[t] = (cc[t] || 0) + 1;
+  });
+  const vendors = nodes.filter(n => n.type === "vendor")
+    .map(n => ({ ...n, count: cc[n.id] || 0 }))
+    .filter(n => n.count > 0)
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 10);
+
+  const max = vendors[0]?.count || 1;
+  const list = document.getElementById("top10-list");
+  list.innerHTML = "";
+  vendors.forEach((v, i) => {
+    const rankClass = i === 0 ? "gold" : i === 1 ? "silver" : i === 2 ? "bronze" : "";
+    const item = document.createElement("div");
+    item.className = "top10-item";
+    item.innerHTML =
+      "<div class='top10-rank " + rankClass + "'>" + (i + 1) + "</div>" +
+      "<img class='top10-logo' src='" + logoUrl(v.id) + "' onerror=\"this.style.display='none'\">" +
+      "<div class='top10-info'>" +
+        "<div class='top10-domain'>" + v.id + "</div>" +
+        ((v.owner && v.owner !== "Unknown") ? "<div class='top10-owner'>" + v.owner + "</div>" : "") +
+        "<div class='top10-bar-wrap'><div class='top10-bar' style='width:" + Math.round((v.count / max) * 100) + "%'></div></div>" +
+      "</div>" +
+      "<div class='top10-count'>" + v.count + "</div>";
+    item.addEventListener("click", () => {
+      selectedId = v.id; openPanel(v, allEdges, cc); highlightNode(v.id);
+    });
+    list.appendChild(item);
+  });
+}
+
+/* ── sim factory ── */
+function buildSim(nodes, edges, cc) {
+  return d3.forceSimulation()
+    .force("link", d3.forceLink().id(d => d.id).distance(75).strength(0.35))
+    .force("charge", d3.forceManyBody().strength(d => d.type === "outlet" ? -500 : -55))
+    .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
+    .force("collision", d3.forceCollide().radius(d => nodeR(d, cc) + 6))
+    .alphaDecay(0.022)
+    .velocityDecay(0.45);
+}
+
+/* ── top10 toggle ── */
+let top10Open = false;
+document.getElementById("btn-top10").addEventListener("click", () => {
+  top10Open = !top10Open;
+  document.getElementById("top10-panel").classList.toggle("open", top10Open);
+  document.getElementById("btn-top10").classList.toggle("active", top10Open);
+});
+
+/* ── freeze ── */
+document.getElementById("btn-freeze").addEventListener("click", () => {
+  frozen = !frozen;
+  const btn = document.getElementById("btn-freeze");
+  if (frozen) {
+    allNodes.forEach(d => { if (d.x != null) { d.fx = d.x; d.fy = d.y; } });
+    sim.alphaTarget(0);
+    btn.textContent = "Unfreeze"; btn.classList.add("active");
+    document.getElementById("stat-sim").textContent = "frozen ❄";
+  } else {
+    allNodes.forEach(d => { d.fx = null; d.fy = null; });
+    sim.alphaTarget(0.1).restart();
+    btn.textContent = "Freeze"; btn.classList.remove("active");
+    document.getElementById("stat-sim").textContent = "simulating…";
+  }
+});
+
+/* ── reset ── */
+document.getElementById("btn-reset").addEventListener("click", () => {
+  frozen = false;
+  allNodes.forEach(d => { d.fx = null; d.fy = null; delete d.x; delete d.y; });
+  document.getElementById("btn-freeze").textContent = "Freeze";
+  document.getElementById("btn-freeze").classList.remove("active");
+  document.getElementById("stat-sim").textContent = "simulating…";
+  const cc = {}; allEdges.forEach(e => { cc[e.target] = (cc[e.target] || 0) + 1; });
+  sim = buildSim(allNodes, allEdges, cc);
+  draw(allNodes, allEdges, cc);
+});
+
+/* ── load ── */
 Promise.all([
   fetch("nodes.json").then(r => r.json()),
   fetch("edges.json").then(r => r.json())
 ]).then(([nodes, edges]) => {
+  document.getElementById("loading").style.display = "none";
   allNodes = nodes; allEdges = edges;
+
   const cc = {};
   edges.forEach(e => { cc[e.target] = (cc[e.target] || 0) + 1; });
+
   document.getElementById("stat-nodes").textContent = nodes.length + " nodes";
   document.getElementById("stat-edges").textContent = edges.length + " connections";
-  sim = d3.forceSimulation()
-    .force("link", d3.forceLink().id(d => d.id).distance(80).strength(0.3))
-    .force("charge", d3.forceManyBody().strength(-180))
-    .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
-    .force("collision", d3.forceCollide().radius(d => nodeRadius(d, cc) + 3));
+
+  buildTop10(nodes, edges);
+  sim = buildSim(nodes, edges, cc);
   draw(nodes, edges, cc);
+
+  /* filters */
   document.querySelectorAll(".filter-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
@@ -246,16 +515,27 @@ Promise.all([
       else {
         const matching = new Set(nodes.filter(n => n.type === "vendor" && (n.category || "").includes(f)).map(n => n.id));
         fe = edges.filter(e => matching.has(typeof e.target === "object" ? e.target.id : e.target));
-        const connectedOutlets = new Set(fe.map(e => typeof e.source === "object" ? e.source.id : e.source));
-        fn = nodes.filter(n => matching.has(n.id) || connectedOutlets.has(n.id));
+        const outlets = new Set(fe.map(e => typeof e.source === "object" ? e.source.id : e.source));
+        fn = nodes.filter(n => matching.has(n.id) || outlets.has(n.id));
       }
+      frozen = false;
+      fn.forEach(d => { d.fx = null; d.fy = null; delete d.x; delete d.y; });
+      document.getElementById("btn-freeze").textContent = "Freeze";
+      document.getElementById("btn-freeze").classList.remove("active");
+      document.getElementById("stat-sim").textContent = "simulating…";
+      buildTop10(fn, fe);
+      sim = buildSim(fn, fe, cc);
       draw(fn, fe, cc);
     });
   });
-  document.getElementById("panel-close").addEventListener("click", () => { selectedId = null; closePanel(); resetHighlight(); });
+
+  document.getElementById("panel-close").addEventListener("click", () => {
+    selectedId = null; closePanel(); resetHighlight();
+  });
+
 }).catch(err => {
-  console.error("Failed to load data:", err);
-  document.body.innerHTML += "<div style='position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:24px;border-radius:8px;border:1px solid #ddd;font-family:sans-serif;color:#c0392b'>Error loading data: " + err.message + "</div>";
+  document.getElementById("loading").innerHTML =
+    "<span style='color:#e74c3c'>Error: " + err.message + "</span>";
 });
 </script>
 </body>
