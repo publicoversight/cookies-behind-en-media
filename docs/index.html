@@ -5,154 +5,287 @@
 <title>Cookie Vendor Network — Global News Outlets</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { background: #f5f5f0; color: #111; font-family: "Inter", sans-serif; overflow: hidden; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#f5f5f0; color:#111; font-family:"Inter",sans-serif; overflow:hidden; }
 
-  #header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 20;
-    padding: 14px 22px; background: #f5f5f0; border-bottom: 1px solid #ddd;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  #header h1 { font-size: 13px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #111; }
-  #header p  { font-size: 11px; color: #999; margin-top: 2px; }
+/* ── HEADER ── */
+#header {
+  position:fixed; top:0; left:0; right:0; z-index:20;
+  background:#f5f5f0; border-bottom:1px solid #ddd;
+}
+#header-top {
+  padding:12px 20px; display:flex; align-items:center; justify-content:space-between;
+}
+#header h1 { font-size:13px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+#header p  { font-size:11px; color:#999; margin-top:2px; }
 
-  #controls { display: flex; gap: 5px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
-  .filter-btn {
-    padding: 4px 12px; border-radius: 20px; border: 1px solid #ccc;
-    background: #fff; color: #666; font-size: 11px; cursor: pointer; transition: all 0.15s;
-  }
-  .filter-btn:hover  { background: #eee; }
-  .filter-btn.active { background: #111; border-color: #111; color: #fff; }
+/* vendor filter row */
+#vendor-bar {
+  padding:8px 20px 10px; display:flex; gap:5px; flex-wrap:wrap; align-items:center;
+  border-top:1px solid #eee;
+}
+.vf-label { font-size:10px; font-weight:600; color:#bbb; letter-spacing:.06em; text-transform:uppercase; margin-right:4px; }
+.filter-btn {
+  padding:3px 12px; border-radius:20px; border:1px solid #ccc;
+  background:#fff; color:#666; font-size:11px; cursor:pointer; transition:all .15s;
+}
+.filter-btn:hover { background:#eee; }
+.filter-btn.active { background:#111; border-color:#111; color:#fff; }
 
-  #right-controls { display: flex; gap: 6px; align-items: center; margin-left: 10px; }
-  .ctrl-btn {
-    padding: 4px 11px; border-radius: 20px; border: 1px solid #ccc;
-    background: #fff; color: #666; font-size: 11px; cursor: pointer; transition: all 0.15s;
-  }
-  .ctrl-btn:hover { background: #eee; }
-  .ctrl-btn.active { background: #c9a86c; border-color: #c9a86c; color: #fff; }
+/* outlet filter row */
+#outlet-bar {
+  padding:7px 20px 9px; display:flex; gap:6px; flex-wrap:wrap; align-items:center;
+  border-top:1px solid #eee; background:#faf9f5;
+}
+.of-label { font-size:10px; font-weight:600; color:#bbb; letter-spacing:.06em; text-transform:uppercase; margin-right:4px; }
+.outlet-chip {
+  display:flex; align-items:center; gap:5px; padding:3px 10px 3px 5px;
+  border-radius:20px; border:1px solid #ddd; background:#fff; cursor:pointer;
+  transition:all .15s; font-size:11px; color:#555;
+}
+.outlet-chip img {
+  width:16px; height:16px; border-radius:3px; object-fit:contain;
+  background:#f5f5f0; border:1px solid #eee; flex-shrink:0;
+}
+.outlet-chip:hover { border-color:#c9a86c; color:#7a5c1e; background:#fffbf3; }
+.outlet-chip.active { background:#c9a86c; border-color:#b8925a; color:#fff; }
+.outlet-chip.active img { border-color:rgba(255,255,255,.3); }
 
-  #canvas { width: 100vw; height: 100vh; display: block; }
+/* right controls */
+#right-controls { display:flex; gap:6px; align-items:center; }
+.ctrl-btn {
+  padding:4px 11px; border-radius:20px; border:1px solid #ccc;
+  background:#fff; color:#666; font-size:11px; cursor:pointer; transition:all .15s; white-space:nowrap;
+}
+.ctrl-btn:hover { background:#eee; }
+.ctrl-btn.active { background:#c9a86c; border-color:#b8925a; color:#fff; }
 
-  /* ── SIDE PANEL ── */
-  #panel {
-    position: fixed; top: 0; right: -380px; width: 360px; height: 100vh;
-    background: #faf9f5; border-left: 1px solid #ddd; z-index: 30;
-    transition: right 0.28s ease; overflow-y: auto; padding: 22px 20px;
-  }
-  #panel.open { right: 0; }
-  #panel-close {
-    position: absolute; top: 14px; right: 14px; cursor: pointer;
-    font-size: 18px; color: #bbb; background: none; border: none; line-height: 1;
-  }
-  #panel-close:hover { color: #111; }
+/* ── CANVAS ── */
+#canvas { width:100vw; height:100vh; display:block; }
 
-  .panel-head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; margin-top: 4px; }
-  #panel-logo {
-    width: 44px; height: 44px; border-radius: 10px; object-fit: contain;
-    border: 1px solid #eee; background: #fff; padding: 4px; flex-shrink: 0;
-  }
-  #panel-title { font-size: 17px; font-weight: 700; color: #111; word-break: break-all; line-height: 1.25; }
-  #panel-owner { font-size: 11px; color: #999; margin-top: 2px; }
+/* outlet diamond pulse */
+@keyframes pulse { 0%,100%{r:16} 50%{r:18} }
 
-  .panel-badge {
-    display: inline-block; padding: 3px 10px; border-radius: 12px;
-    font-size: 11px; font-weight: 600; margin-bottom: 14px;
-  }
-  .badge-outlet   { background: #fff3cd; color: #856404; border: 1px solid #ffc107; }
-  .badge-ad       { background: #fde8e8; color: #c0392b; border: 1px solid #e74c3c; }
-  .badge-analytics{ background: #e8f0fe; color: #1a56db; border: 1px solid #4285f4; }
-  .badge-cdn      { background: #e8f7ee; color: #1a7a3f; border: 1px solid #27ae60; }
-  .badge-unknown  { background: #f0f0f0; color: #666;    border: 1px solid #ccc; }
+/* ── SIDE PANEL ── */
+#panel {
+  position:fixed; top:0; right:-390px; width:370px; height:100vh;
+  background:#faf9f5; border-left:1px solid #ddd; z-index:30;
+  transition:right .28s ease; overflow-y:auto; padding:22px 20px;
+}
+#panel.open { right:0; }
+#panel-close {
+  position:absolute; top:14px; right:14px; cursor:pointer;
+  font-size:18px; color:#bbb; background:none; border:none; line-height:1;
+}
+#panel-close:hover { color:#111; }
+.panel-head { display:flex; align-items:center; gap:12px; margin-bottom:10px; margin-top:4px; }
+#panel-logo {
+  width:44px; height:44px; border-radius:10px; object-fit:contain;
+  border:1px solid #eee; background:#fff; padding:4px; flex-shrink:0;
+}
+#panel-title { font-size:17px; font-weight:700; color:#111; word-break:break-all; line-height:1.25; }
+#panel-owner { font-size:11px; color:#999; margin-top:2px; }
+.panel-badge {
+  display:inline-block; padding:3px 10px; border-radius:12px;
+  font-size:11px; font-weight:600; margin-bottom:14px;
+}
+.badge-outlet   { background:#fff3cd; color:#856404; border:1px solid #ffc107; }
+.badge-ad       { background:#fde8e8; color:#c0392b; border:1px solid #e74c3c; }
+.badge-analytics{ background:#e8f0fe; color:#1a56db; border:1px solid #4285f4; }
+.badge-cdn      { background:#e8f7ee; color:#1a7a3f; border:1px solid #27ae60; }
+.badge-unknown  { background:#f0f0f0; color:#666;    border:1px solid #ccc; }
+.panel-section { margin-top:14px; padding-top:14px; border-top:1px solid #eee; }
+.panel-section h3 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#aaa; margin-bottom:9px; }
+.conn-item {
+  display:flex; align-items:center; gap:9px; padding:6px 8px;
+  border-radius:6px; margin-bottom:3px; font-size:12px; color:#333;
+  background:#f4f3ee; cursor:pointer; transition:background .12s;
+}
+.conn-item:hover { background:#ede9e0; }
+.conn-logo { width:20px; height:20px; border-radius:4px; object-fit:contain; background:#fff; border:1px solid #eee; flex-shrink:0; }
+.conn-dot  { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.conn-info { flex:1; min-width:0; }
+.conn-name { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.conn-owner{ font-size:10px; color:#aaa; margin-top:1px; }
 
-  .panel-section { margin-top: 14px; padding-top: 14px; border-top: 1px solid #eee; }
-  .panel-section h3 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; margin-bottom: 9px; }
+/* ── TOP 10 ── */
+#top10-panel {
+  position:fixed; top:0; left:-310px; width:290px; height:100vh;
+  background:#faf9f5; border-right:1px solid #ddd; z-index:25;
+  transition:left .28s ease; overflow-y:auto; padding:16px;
+  padding-top:60px;
+}
+#top10-panel.open { left:0; }
+#top10-panel h2 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#aaa; margin-bottom:14px; }
+.top10-item {
+  display:flex; align-items:center; gap:10px; padding:7px 8px;
+  border-radius:6px; margin-bottom:4px; cursor:pointer;
+  background:#f4f3ee; transition:background .12s;
+}
+.top10-item:hover { background:#ede9e0; }
+.top10-rank { font-size:11px; font-weight:700; color:#ccc; width:18px; text-align:right; flex-shrink:0; }
+.top10-rank.gold   { color:#c9a86c; }
+.top10-rank.silver { color:#aaa; }
+.top10-rank.bronze { color:#b87333; }
+.top10-logo { width:24px; height:24px; border-radius:5px; object-fit:contain; background:#fff; border:1px solid #eee; flex-shrink:0; }
+.top10-info { flex:1; min-width:0; }
+.top10-domain { font-size:12px; font-weight:600; color:#222; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.top10-owner  { font-size:10px; color:#aaa; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.top10-bar-wrap { margin-top:3px; background:#e8e4d8; border-radius:2px; height:3px; }
+.top10-bar { background:#c9a86c; height:3px; border-radius:2px; }
+.top10-count { font-size:11px; font-weight:700; color:#c9a86c; flex-shrink:0; }
 
-  .conn-item {
-    display: flex; align-items: center; gap: 9px; padding: 6px 8px;
-    border-radius: 6px; margin-bottom: 3px; font-size: 12px; color: #333;
-    background: #f4f3ee; cursor: pointer; transition: background 0.12s;
-  }
-  .conn-item:hover { background: #ede9e0; }
-  .conn-logo { width: 20px; height: 20px; border-radius: 4px; object-fit: contain; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
-  .conn-dot  { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .conn-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .conn-owner{ font-size: 10px; color: #aaa; margin-top: 1px; }
+/* ── INTRO MODAL ── */
+#intro-overlay {
+  position:fixed; inset:0; z-index:100;
+  background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center;
+}
+#intro-box {
+  background:#faf9f5; border-radius:12px; border:1px solid #ddd;
+  width:min(660px,92vw); max-height:85vh; overflow-y:auto;
+  padding:32px 36px; box-shadow:0 12px 48px rgba(0,0,0,.18);
+}
+#intro-box h2 { font-size:20px; font-weight:700; color:#111; margin-bottom:6px; }
+#intro-box .sub { font-size:13px; color:#888; margin-bottom:22px; }
+#intro-box h3 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:#c9a86c; margin:20px 0 8px; }
+#intro-box p  { font-size:13px; color:#444; line-height:1.65; margin-bottom:8px; }
+.glossary-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:6px 20px; margin-bottom:8px;
+}
+.glossary-item { display:flex; flex-direction:column; padding:8px 10px; background:#f4f3ee; border-radius:6px; }
+.glossary-term { font-size:12px; font-weight:700; color:#7a5c1e; margin-bottom:2px; }
+.glossary-def  { font-size:11px; color:#555; line-height:1.5; }
+.limit-item { display:flex; gap:10px; margin-bottom:10px; }
+.limit-num { font-size:13px; font-weight:700; color:#c9a86c; flex-shrink:0; width:20px; }
+.limit-text { font-size:13px; color:#444; line-height:1.55; }
+#intro-start {
+  margin-top:24px; width:100%; padding:12px; border-radius:8px;
+  background:#111; color:#fff; border:none; font-size:14px; font-weight:600;
+  cursor:pointer; letter-spacing:.03em; transition:background .15s;
+}
+#intro-start:hover { background:#333; }
 
-  /* ── TOP 10 PANEL ── */
-  #top10-panel {
-    position: fixed; top: 56px; left: -310px; width: 290px;
-    background: #faf9f5; border-right: 1px solid #ddd; z-index: 25;
-    transition: left 0.28s ease; overflow-y: auto;
-    padding: 16px 16px; height: calc(100vh - 56px);
-  }
-  #top10-panel.open { left: 0; }
-  #top10-panel h2 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; margin-bottom: 14px; }
-  .top10-item {
-    display: flex; align-items: center; gap: 10px; padding: 7px 8px;
-    border-radius: 6px; margin-bottom: 4px; cursor: pointer;
-    background: #f4f3ee; transition: background 0.12s;
-  }
-  .top10-item:hover { background: #ede9e0; }
-  .top10-rank { font-size: 11px; font-weight: 700; color: #ccc; width: 18px; text-align: right; flex-shrink: 0; }
-  .top10-rank.gold   { color: #c9a86c; }
-  .top10-rank.silver { color: #aaa; }
-  .top10-rank.bronze { color: #b87333; }
-  .top10-logo { width: 24px; height: 24px; border-radius: 5px; object-fit: contain; background: #fff; border: 1px solid #eee; flex-shrink: 0; }
-  .top10-info { flex: 1; min-width: 0; }
-  .top10-domain { font-size: 12px; font-weight: 600; color: #222; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .top10-owner  { font-size: 10px; color: #aaa; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .top10-bar-wrap { margin-top: 3px; background: #e8e4d8; border-radius: 2px; height: 3px; }
-  .top10-bar { background: #c9a86c; height: 3px; border-radius: 2px; }
-  .top10-count { font-size: 11px; font-weight: 700; color: #c9a86c; flex-shrink: 0; }
+/* ── TOOLTIP ── */
+#tooltip {
+  position:fixed; background:rgba(255,255,255,.97); border:1px solid #ddd;
+  border-radius:6px; padding:8px 12px; font-size:11px; pointer-events:none;
+  opacity:0; transition:opacity .08s; z-index:99;
+  box-shadow:0 2px 10px rgba(0,0,0,.1); max-width:240px; line-height:1.5;
+}
+.tt-logo { width:20px; height:20px; border-radius:4px; object-fit:contain; border:1px solid #eee; background:#fff; float:left; margin-right:7px; margin-top:1px; }
 
-  /* ── TOOLTIP ── */
-  #tooltip {
-    position: fixed; background: rgba(255,255,255,0.97); border: 1px solid #ddd;
-    border-radius: 6px; padding: 8px 12px; font-size: 11px; pointer-events: none;
-    opacity: 0; transition: opacity 0.08s; z-index: 99;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); max-width: 240px; line-height: 1.5;
-  }
-  .tt-logo { width: 22px; height: 22px; border-radius: 4px; object-fit: contain; border: 1px solid #eee; background: #fff; float: left; margin-right: 7px; margin-top: 1px; }
+/* ── LEGEND ── */
+#legend {
+  position:fixed; bottom:18px; left:18px; font-size:11px; color:#888; z-index:10;
+  background:rgba(245,245,240,.95); padding:10px 14px; border-radius:8px; border:1px solid #ddd;
+}
+#legend div { display:flex; align-items:center; gap:8px; margin:3px 0; }
+#legend .dot { width:9px; height:9px; flex-shrink:0; }
+#legend .dot.diamond {
+  width:9px; height:9px; background:#c9a86c;
+  transform:rotate(45deg); border-radius:1px;
+}
 
-  /* ── LEGEND ── */
-  #legend {
-    position: fixed; bottom: 18px; left: 18px; font-size: 11px; color: #888; z-index: 10;
-    background: rgba(245,245,240,0.95); padding: 10px 14px; border-radius: 8px; border: 1px solid #ddd;
-  }
-  #legend div { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
-  #legend .dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-
-  #stats { position: fixed; bottom: 18px; right: 18px; font-size: 11px; color: #bbb; text-align: right; z-index: 10; line-height: 1.6; }
-
-  #loading {
-    position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
-    font-size: 13px; color: #aaa; letter-spacing: 0.05em;
-  }
+#stats { position:fixed; bottom:18px; right:18px; font-size:11px; color:#bbb; text-align:right; z-index:10; line-height:1.6; }
+#loading { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); font-size:13px; color:#aaa; }
 </style>
 </head>
 <body>
-<div id="header">
-  <div>
-    <h1>Cookie Vendor Network</h1>
-    <p>Third-party tracking domains behind 20 global news outlets</p>
+
+<!-- ── INTRO MODAL ── -->
+<div id="intro-overlay">
+  <div id="intro-box">
+    <h2>Cookie Vendor Network</h2>
+    <p class="sub">Third-party tracking domains behind 18 global news outlets</p>
+
+    <p>Every time you open a news article, dozens of companies you've never heard of receive a signal. This map makes that invisible network visible — showing <strong>1,168 connections</strong> between 18 outlets and the ad tech companies embedded in their pages.</p>
+
+    <h3>How to read the map</h3>
+    <p>Each <strong>diamond ◆</strong> is a news outlet. Each <strong>circle ●</strong> is a third-party vendor. Lines connect outlets to the vendors loaded on their pages. The bigger the circle, the more outlets that vendor appears on. Click any node to explore its connections.</p>
+
+    <h3>Glossary</h3>
+    <div class="glossary-grid">
+      <div class="glossary-item">
+        <span class="glossary-term">Cookie</span>
+        <span class="glossary-def">A small file stored in your browser by a website or third party, used to identify and track you across visits and sites.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">Third-party domain</span>
+        <span class="glossary-def">A domain loaded by a page that belongs to a company other than the site you're visiting.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">Ad Tracking</span>
+        <span class="glossary-def">Domains used by advertising networks to profile users, serve targeted ads, and measure campaign performance.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">Analytics</span>
+        <span class="glossary-def">Tools that measure audience behaviour — page views, time on site, scroll depth — often storing user-level identifiers.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">CDN</span>
+        <span class="glossary-def">Content Delivery Network — infrastructure that serves files (fonts, scripts, images) from servers near the user. Generally less privacy-invasive, but still logs request metadata.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">DSP / SSP</span>
+        <span class="glossary-def">Demand-Side Platform / Supply-Side Platform — software that automates buying and selling of ad space in real time, passing user data between parties.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">CMP</span>
+        <span class="glossary-def">Consent Management Platform — the cookie banner system. Manages user consent choices, though compliance varies widely in practice.</span>
+      </div>
+      <div class="glossary-item">
+        <span class="glossary-term">RTB</span>
+        <span class="glossary-def">Real-Time Bidding — an auction that happens in milliseconds when a page loads, during which your profile is shared with hundreds of advertisers.</span>
+      </div>
+    </div>
+
+    <h3>Limitations</h3>
+    <div class="limit-item"><div class="limit-num">1</div><div class="limit-text"><strong>Snapshot in time.</strong> Cookie inventories change week to week. This data reflects one crawl date.</div></div>
+    <div class="limit-item"><div class="limit-num">2</div><div class="limit-text"><strong>No consent interaction.</strong> Vendors were captured on page arrival, before accepting or declining cookie banners.</div></div>
+    <div class="limit-item"><div class="limit-num">3</div><div class="limit-text"><strong>Homepage bias.</strong> Some vendors only appear on specific content verticals and may be undercounted.</div></div>
+    <div class="limit-item"><div class="limit-num">4</div><div class="limit-text"><strong>Domain presence ≠ data transfer.</strong> A request being made does not prove personal data was shared — only that contact occurred.</div></div>
+    <div class="limit-item"><div class="limit-num">5</div><div class="limit-text"><strong>Coverage varies.</strong> Some outlets (BBC, Reuters, DW) have far fewer entries than others, reflecting access and crawl limitations rather than necessarily fewer trackers.</div></div>
+
+    <button id="intro-start">Explore the network →</button>
   </div>
-  <div style="display:flex;align-items:center;gap:8px">
-    <div id="controls">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="Ad Motivated Tracking">Ad Tracking</button>
-      <button class="filter-btn" data-filter="Analytics">Analytics</button>
-      <button class="filter-btn" data-filter="CDN">CDN</button>
-      <button class="filter-btn" data-filter="Unknown">Unknown</button>
+</div>
+
+<!-- ── HEADER ── -->
+<div id="header">
+  <div id="header-top">
+    <div>
+      <h1>Cookie Vendor Network</h1>
+      <p>Third-party tracking domains behind 18 global news outlets</p>
     </div>
     <div id="right-controls">
+      <button class="ctrl-btn" id="btn-info">? About</button>
       <button class="ctrl-btn" id="btn-top10">Top 10</button>
       <button class="ctrl-btn" id="btn-freeze">Freeze</button>
       <button class="ctrl-btn" id="btn-reset">Reset</button>
     </div>
   </div>
+
+  <!-- vendor category filters -->
+  <div id="vendor-bar">
+    <span class="vf-label">Vendors</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Ad Motivated Tracking">Ad Tracking</button>
+    <button class="filter-btn" data-filter="Analytics">Analytics</button>
+    <button class="filter-btn" data-filter="CDN">CDN</button>
+    <button class="filter-btn" data-filter="Unknown">Unknown</button>
+  </div>
+
+  <!-- outlet filter chips -->
+  <div id="outlet-bar">
+    <span class="of-label">Outlets</span>
+    <button class="outlet-chip active" data-outlet="all">
+      <span>All outlets</span>
+    </button>
+    <!-- chips injected by JS -->
+  </div>
 </div>
 
+<!-- TOP 10 -->
 <div id="top10-panel">
   <h2>Top 10 Vendors</h2>
   <div id="top10-list"></div>
@@ -161,6 +294,7 @@
 <div id="loading">Loading network…</div>
 <svg id="canvas"></svg>
 
+<!-- DETAIL PANEL -->
 <div id="panel">
   <button id="panel-close">✕</button>
   <div class="panel-head">
@@ -180,11 +314,11 @@
 <div id="tooltip"></div>
 
 <div id="legend">
-  <div><div class="dot" style="background:#c9a86c"></div> News Outlet</div>
-  <div><div class="dot" style="background:#e74c3c"></div> Ad Tracking</div>
-  <div><div class="dot" style="background:#4285f4"></div> Analytics</div>
-  <div><div class="dot" style="background:#27ae60"></div> CDN</div>
-  <div><div class="dot" style="background:#aaa"></div> Unknown</div>
+  <div><div class="dot diamond"></div> News Outlet</div>
+  <div><div class="dot" style="background:#e74c3c;border-radius:50%"></div> Ad Tracking</div>
+  <div><div class="dot" style="background:#4285f4;border-radius:50%"></div> Analytics</div>
+  <div><div class="dot" style="background:#27ae60;border-radius:50%"></div> CDN</div>
+  <div><div class="dot" style="background:#bbb;border-radius:50%"></div> Unknown</div>
 </div>
 <div id="stats">
   <div id="stat-nodes"></div>
@@ -198,18 +332,23 @@ const WIDTH  = window.innerWidth;
 const HEIGHT = window.innerHeight;
 const svg = d3.select("#canvas").attr("width", WIDTH).attr("height", HEIGHT);
 const g   = svg.append("g");
-svg.call(d3.zoom().scaleExtent([0.03, 12]).on("zoom", e => g.attr("transform", e.transform)));
+// offset for header height (3 rows)
+const headerH = () => document.getElementById("header").offsetHeight;
+svg.call(d3.zoom().scaleExtent([0.03,12]).on("zoom", e => g.attr("transform", e.transform)));
 
 const tooltip = document.getElementById("tooltip");
 const panel   = document.getElementById("panel");
 let allNodes = [], allEdges = [], sim;
 let selectedId = null, frozen = false;
+let activeVendorFilter = "all";
+let activeOutletFilter = "all";
 
+/* ── helpers ── */
 function logoUrl(d) { return "https://logo.clearbit.com/" + d; }
 
 function nodeColor(d) {
   if (d.type === "outlet") return "#c9a86c";
-  const c = (d.category || "").toLowerCase();
+  const c = (d.category||"").toLowerCase();
   if (c.includes("ad"))        return "#e74c3c";
   if (c.includes("analytics")) return "#4285f4";
   if (c.includes("cdn"))       return "#27ae60";
@@ -217,31 +356,58 @@ function nodeColor(d) {
 }
 
 function nodeR(d, cc) {
-  if (d.type === "outlet") return 15;
+  if (d.type === "outlet") return 16;
   const c = cc[d.id] || 1;
   return Math.max(5, Math.min(19, 3.5 + c * 1.5));
 }
 
 function badgeClass(d) {
-  if (d.type === "outlet") return "badge-outlet";
-  const c = (d.category || "").toLowerCase();
+  if (d.type==="outlet") return "badge-outlet";
+  const c = (d.category||"").toLowerCase();
   if (c.includes("ad")) return "badge-ad";
   if (c.includes("analytics")) return "badge-analytics";
   if (c.includes("cdn")) return "badge-cdn";
   return "badge-unknown";
 }
 function badgeLabel(d) {
-  if (d.type === "outlet") return "News Outlet";
-  const c = (d.category || "").toLowerCase();
+  if (d.type==="outlet") return "News Outlet";
+  const c = (d.category||"").toLowerCase();
   if (c.includes("ad")) return "Ad Tracking";
   if (c.includes("analytics")) return "Analytics";
   if (c.includes("cdn")) return "CDN";
   return "Unknown";
 }
 
-/* ── tooltip logo image helper ── */
-function makeTTLogo(domain) {
-  return "<img class='tt-logo' src='" + logoUrl(domain) + "' onerror=\"this.style.display='none'\">";
+/* diamond path centred at 0,0 */
+function diamondPath(r) {
+  return `M 0 ${-r} L ${r} 0 L 0 ${r} L ${-r} 0 Z`;
+}
+
+/* ── filtered subgraph ── */
+function getSubgraph() {
+  let nodes = allNodes, edges = allEdges;
+
+  // vendor category filter
+  if (activeVendorFilter !== "all") {
+    const matching = new Set(
+      allNodes.filter(n => n.type==="vendor" && (n.category||"").includes(activeVendorFilter)).map(n=>n.id)
+    );
+    edges = allEdges.filter(e => matching.has(typeof e.target==="object" ? e.target.id : e.target));
+    const outlets = new Set(edges.map(e => typeof e.source==="object" ? e.source.id : e.source));
+    nodes = allNodes.filter(n => matching.has(n.id) || outlets.has(n.id));
+  }
+
+  // outlet filter — keep only that outlet + its vendors
+  if (activeOutletFilter !== "all") {
+    edges = edges.filter(e => {
+      const s = typeof e.source==="object" ? e.source.id : e.source;
+      return s === activeOutletFilter;
+    });
+    const vendorIds = new Set(edges.map(e => typeof e.target==="object" ? e.target.id : e.target));
+    nodes = allNodes.filter(n => n.id === activeOutletFilter || vendorIds.has(n.id));
+  }
+
+  return { nodes, edges };
 }
 
 /* ── panel ── */
@@ -249,61 +415,57 @@ function closePanel() { panel.classList.remove("open"); }
 
 function openPanel(d, edges, cc) {
   const conEdges = edges.filter(e => {
-    const s = typeof e.source === "object" ? e.source.id : e.source;
-    const t = typeof e.target === "object" ? e.target.id : e.target;
-    return s === d.id || t === d.id;
+    const s = typeof e.source==="object" ? e.source.id : e.source;
+    const t = typeof e.target==="object" ? e.target.id : e.target;
+    return s===d.id || t===d.id;
   });
   const conIds = conEdges.map(e => {
-    const s = typeof e.source === "object" ? e.source.id : e.source;
-    const t = typeof e.target === "object" ? e.target.id : e.target;
-    return s === d.id ? t : s;
+    const s = typeof e.source==="object" ? e.source.id : e.source;
+    const t = typeof e.target==="object" ? e.target.id : e.target;
+    return s===d.id ? t : s;
   });
 
   const logo = document.getElementById("panel-logo");
   logo.src = logoUrl(d.id);
-  logo.onerror = function() { this.style.display = "none"; };
   logo.style.display = "block";
+  logo.onerror = function(){ this.style.display="none"; };
 
   document.getElementById("panel-title").textContent = d.id;
-  document.getElementById("panel-owner").textContent = (d.owner && d.owner !== "Unknown") ? d.owner : "";
+  document.getElementById("panel-owner").textContent = (d.owner && d.owner!=="Unknown") ? d.owner : "";
   document.getElementById("panel-badge-wrap").innerHTML =
-    "<span class='panel-badge " + badgeClass(d) + "'>" + badgeLabel(d) + "</span>";
-
+    "<span class='panel-badge "+badgeClass(d)+"'>"+badgeLabel(d)+"</span>";
   document.getElementById("panel-connections-label").textContent =
-    d.type === "outlet"
-      ? "Vendors tracking this site (" + conIds.length + ")"
-      : "Appears on (" + conIds.length + ") outlets";
+    d.type==="outlet"
+      ? "Vendors tracking this site ("+conIds.length+")"
+      : "Appears on ("+conIds.length+") outlets";
 
   const container = document.getElementById("panel-connections");
   container.innerHTML = "";
   conIds.forEach(nid => {
-    const n = allNodes.find(x => x.id === nid);
+    const n = allNodes.find(x => x.id===nid);
     if (!n) return;
     const item = document.createElement("div");
     item.className = "conn-item";
 
-    // logo
     const img = document.createElement("img");
     img.className = "conn-logo";
     img.src = logoUrl(nid);
-    img.onerror = function() {
-      this.style.display = "none";
-      const dot = document.createElement("div");
-      dot.className = "conn-dot";
-      dot.style.background = nodeColor(n);
-      item.insertBefore(dot, item.firstChild);
+    img.onerror = function(){
+      this.replaceWith((() => {
+        const dot=document.createElement("div");
+        dot.className="conn-dot";
+        dot.style.background=nodeColor(n);
+        return dot;
+      })());
     };
 
     const info = document.createElement("div");
-    info.style.flex = "1"; info.style.minWidth = "0";
-    info.innerHTML = "<div class='conn-name'>" + nid + "</div>" +
-      ((n.owner && n.owner !== "Unknown") ? "<div class='conn-owner'>" + n.owner + "</div>" : "");
+    info.className = "conn-info";
+    info.innerHTML = "<div class='conn-name'>"+nid+"</div>"+
+      ((n.owner&&n.owner!=="Unknown") ? "<div class='conn-owner'>"+n.owner+"</div>" : "");
 
-    item.appendChild(img);
-    item.appendChild(info);
-    item.addEventListener("click", () => {
-      selectedId = nid; openPanel(n, allEdges, cc); highlightNode(nid);
-    });
+    item.appendChild(img); item.appendChild(info);
+    item.addEventListener("click", ()=>{ selectedId=nid; openPanel(n,allEdges,cc); highlightNode(nid); });
     container.appendChild(item);
   });
   panel.classList.add("open");
@@ -313,229 +475,272 @@ function openPanel(d, edges, cc) {
 function highlightNode(id) {
   const conn = new Set();
   allEdges.forEach(e => {
-    const s = typeof e.source === "object" ? e.source.id : e.source;
-    const t = typeof e.target === "object" ? e.target.id : e.target;
-    if (s === id) conn.add(t);
-    if (t === id) conn.add(s);
+    const s = typeof e.source==="object" ? e.source.id : e.source;
+    const t = typeof e.target==="object" ? e.target.id : e.target;
+    if (s===id) conn.add(t);
+    if (t===id) conn.add(s);
   });
   conn.add(id);
-  g.selectAll("circle").attr("opacity", d => conn.has(d.id) ? 1 : 0.06);
+  g.selectAll(".node-shape").attr("opacity", d => conn.has(d.id) ? 1 : 0.06);
   g.selectAll("line").attr("opacity", e => {
-    const s = typeof e.source === "object" ? e.source.id : e.source;
-    const t = typeof e.target === "object" ? e.target.id : e.target;
-    return (s === id || t === id) ? 0.75 : 0.02;
+    const s = typeof e.source==="object" ? e.source.id : e.source;
+    const t = typeof e.target==="object" ? e.target.id : e.target;
+    return (s===id||t===id) ? 0.75 : 0.02;
   });
   g.selectAll(".n-label").attr("opacity", d => conn.has(d.id) ? 1 : 0.02);
 }
+
 function resetHighlight() {
-  g.selectAll("circle").attr("opacity", 1);
+  g.selectAll(".node-shape").attr("opacity", 1);
   g.selectAll("line").attr("opacity", 0.13);
-  g.selectAll(".n-label").attr("opacity", d => d.type === "outlet" ? 1 : 0);
+  g.selectAll(".n-label").attr("opacity", d => d.type==="outlet" ? 1 : 0);
 }
 
 /* ── draw ── */
 function draw(nodes, edges, cc) {
   g.selectAll("*").remove();
+  frozen = false;
+
+  const hh = headerH();
+  sim.force("center", d3.forceCenter(WIDTH/2, (HEIGHT+hh)/2));
 
   const link = g.append("g").selectAll("line").data(edges).enter().append("line")
-    .attr("stroke", "#d0cdc4").attr("stroke-width", 0.7).attr("opacity", 0.13);
+    .attr("stroke","#d0cdc4").attr("stroke-width",0.7).attr("opacity",0.13);
 
-  const node = g.append("g").selectAll("circle").data(nodes).enter().append("circle")
-    .attr("r", d => nodeR(d, cc))
-    .attr("fill", d => nodeColor(d))
-    .attr("stroke", d => d.type === "outlet" ? "#8a6d35" : "#fff")
-    .attr("stroke-width", d => d.type === "outlet" ? 1.5 : 0.4)
-    .style("cursor", "pointer")
+  const nodeG = g.append("g").selectAll("g.ng").data(nodes).enter().append("g")
+    .attr("class","ng")
+    .style("cursor","pointer")
     .call(d3.drag()
-      .on("start", (ev, d) => { if (!ev.active) sim.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
-      .on("drag",  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
-      .on("end",   (ev, d) => { if (!ev.active) sim.alphaTarget(0); if (!frozen) { d.fx = null; d.fy = null; } })
+      .on("start",(ev,d)=>{ if(!ev.active) sim.alphaTarget(0.1).restart(); d.fx=d.x; d.fy=d.y; })
+      .on("drag", (ev,d)=>{ d.fx=ev.x; d.fy=ev.y; })
+      .on("end",  (ev,d)=>{ if(!ev.active) sim.alphaTarget(0); if(!frozen){d.fx=null;d.fy=null;} })
     )
-    .on("mouseover", (ev, d) => {
-      const c = edges.filter(e => {
-        const s = typeof e.source === "object" ? e.source.id : e.source;
-        const t = typeof e.target === "object" ? e.target.id : e.target;
-        return s === d.id || t === d.id;
+    .on("mouseover",(ev,d)=>{
+      const c = edges.filter(e=>{
+        const s=typeof e.source==="object"?e.source.id:e.source;
+        const t=typeof e.target==="object"?e.target.id:e.target;
+        return s===d.id||t===d.id;
       }).length;
       tooltip.innerHTML =
-        makeTTLogo(d.id) +
-        "<strong>" + d.id + "</strong><br>" +
-        ((d.owner && d.owner !== "Unknown") ? "<span style='color:#888'>" + d.owner + "</span><br>" : "") +
-        "<span style='color:#bbb'>" + (d.category || "Unknown") + " · " + c + " connection" + (c !== 1 ? "s" : "") + "</span>";
-      tooltip.style.opacity = 1;
+        "<img class='tt-logo' src='"+logoUrl(d.id)+"' onerror=\"this.style.display='none'\">"+
+        "<strong>"+d.id+"</strong><br>"+
+        ((d.owner&&d.owner!=="Unknown")?"<span style='color:#888'>"+d.owner+"</span><br>":"")+
+        "<span style='color:#bbb'>"+(d.category||"Unknown")+" · "+c+" connection"+(c!==1?"s":"")+"</span>";
+      tooltip.style.opacity=1;
     })
-    .on("mousemove", ev => { tooltip.style.left = (ev.clientX + 15) + "px"; tooltip.style.top = (ev.clientY - 10) + "px"; })
-    .on("mouseout",  () => { tooltip.style.opacity = 0; })
-    .on("click", (ev, d) => { ev.stopPropagation(); selectedId = d.id; openPanel(d, edges, cc); highlightNode(d.id); });
+    .on("mousemove",ev=>{ tooltip.style.left=(ev.clientX+15)+"px"; tooltip.style.top=(ev.clientY-10)+"px"; })
+    .on("mouseout",()=>{ tooltip.style.opacity=0; })
+    .on("click",(ev,d)=>{ ev.stopPropagation(); selectedId=d.id; openPanel(d,edges,cc); highlightNode(d.id); });
+
+  // outlets → diamond, vendors → circle
+  nodeG.each(function(d) {
+    const sel = d3.select(this);
+    if (d.type === "outlet") {
+      sel.append("path")
+        .attr("class","node-shape")
+        .attr("d", diamondPath(nodeR(d,cc)))
+        .attr("fill", "#c9a86c")
+        .attr("stroke","#8a6d35")
+        .attr("stroke-width",1.5);
+    } else {
+      sel.append("circle")
+        .attr("class","node-shape")
+        .attr("r", nodeR(d,cc))
+        .attr("fill", nodeColor(d))
+        .attr("stroke","#fff")
+        .attr("stroke-width",0.4);
+    }
+  });
 
   const label = g.append("g").selectAll("text").data(nodes).enter().append("text")
-    .attr("class", "n-label")
-    .text(d => d.id)
-    .attr("font-size", d => d.type === "outlet" ? "9.5px" : "8px")
-    .attr("font-family", "Inter, sans-serif")
-    .attr("fill", d => d.type === "outlet" ? "#5a3e1b" : "#666")
-    .attr("text-anchor", "middle")
-    .attr("dy", d => -(nodeR(d, cc) + 4))
-    .attr("opacity", d => d.type === "outlet" ? 1 : 0)
-    .style("pointer-events", "none");
+    .attr("class","n-label")
+    .text(d=>d.id)
+    .attr("font-size", d=>d.type==="outlet"?"10px":"8px")
+    .attr("font-family","Inter,sans-serif")
+    .attr("fill", d=>d.type==="outlet"?"#5a3e1b":"#666")
+    .attr("font-weight", d=>d.type==="outlet"?"600":"400")
+    .attr("text-anchor","middle")
+    .attr("dy", d=>-(nodeR(d,cc)+5))
+    .attr("opacity", d=>d.type==="outlet"?1:0)
+    .style("pointer-events","none");
 
-  svg.on("click", () => { if (selectedId) { selectedId = null; closePanel(); resetHighlight(); } });
+  svg.on("click",()=>{ if(selectedId){selectedId=null;closePanel();resetHighlight();} });
 
   sim.nodes(nodes);
   sim.force("link").links(edges);
   sim.alpha(1).restart();
 
-  sim.on("tick", () => {
-    link.attr("x1", d => d.source.x).attr("y1", d => d.source.y)
-        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
-    node.attr("cx", d => d.x).attr("cy", d => d.y);
-    label.attr("x", d => d.x).attr("y", d => d.y);
+  sim.on("tick",()=>{
+    link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y)
+        .attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);
+    nodeG.attr("transform",d=>"translate("+d.x+","+d.y+")");
+    label.attr("x",d=>d.x).attr("y",d=>d.y);
   });
 
-  sim.on("end", () => {
+  sim.on("end",()=>{
     document.getElementById("stat-sim").textContent = "settled ✓";
-    nodes.forEach(d => { d.fx = d.x; d.fy = d.y; });
-    frozen = true;
-    document.getElementById("btn-freeze").textContent = "Unfreeze";
+    nodes.forEach(d=>{ d.fx=d.x; d.fy=d.y; });
+    frozen=true;
+    document.getElementById("btn-freeze").textContent="Unfreeze";
     document.getElementById("btn-freeze").classList.add("active");
   });
 }
 
 /* ── top 10 ── */
 function buildTop10(nodes, edges) {
-  const cc = {};
-  edges.forEach(e => {
-    const t = typeof e.target === "object" ? e.target.id : e.target;
-    cc[t] = (cc[t] || 0) + 1;
-  });
-  const vendors = nodes.filter(n => n.type === "vendor")
-    .map(n => ({ ...n, count: cc[n.id] || 0 }))
-    .filter(n => n.count > 0)
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 10);
-
-  const max = vendors[0]?.count || 1;
+  const cc={};
+  edges.forEach(e=>{ const t=typeof e.target==="object"?e.target.id:e.target; cc[t]=(cc[t]||0)+1; });
+  const vendors = nodes.filter(n=>n.type==="vendor")
+    .map(n=>({...n,count:cc[n.id]||0}))
+    .filter(n=>n.count>0)
+    .sort((a,b)=>b.count-a.count).slice(0,10);
+  const max = vendors[0]?.count||1;
   const list = document.getElementById("top10-list");
-  list.innerHTML = "";
-  vendors.forEach((v, i) => {
-    const rankClass = i === 0 ? "gold" : i === 1 ? "silver" : i === 2 ? "bronze" : "";
-    const item = document.createElement("div");
-    item.className = "top10-item";
-    item.innerHTML =
-      "<div class='top10-rank " + rankClass + "'>" + (i + 1) + "</div>" +
-      "<img class='top10-logo' src='" + logoUrl(v.id) + "' onerror=\"this.style.display='none'\">" +
-      "<div class='top10-info'>" +
-        "<div class='top10-domain'>" + v.id + "</div>" +
-        ((v.owner && v.owner !== "Unknown") ? "<div class='top10-owner'>" + v.owner + "</div>" : "") +
-        "<div class='top10-bar-wrap'><div class='top10-bar' style='width:" + Math.round((v.count / max) * 100) + "%'></div></div>" +
-      "</div>" +
-      "<div class='top10-count'>" + v.count + "</div>";
-    item.addEventListener("click", () => {
-      selectedId = v.id; openPanel(v, allEdges, cc); highlightNode(v.id);
-    });
+  list.innerHTML="";
+  vendors.forEach((v,i)=>{
+    const rc = i===0?"gold":i===1?"silver":i===2?"bronze":"";
+    const item=document.createElement("div"); item.className="top10-item";
+    item.innerHTML=
+      "<div class='top10-rank "+rc+"'>"+(i+1)+"</div>"+
+      "<img class='top10-logo' src='"+logoUrl(v.id)+"' onerror=\"this.style.display='none'\">"+
+      "<div class='top10-info'>"+
+        "<div class='top10-domain'>"+v.id+"</div>"+
+        ((v.owner&&v.owner!=="Unknown")?"<div class='top10-owner'>"+v.owner+"</div>":"")+
+        "<div class='top10-bar-wrap'><div class='top10-bar' style='width:"+Math.round((v.count/max)*100)+"%'></div></div>"+
+      "</div>"+
+      "<div class='top10-count'>"+v.count+"</div>";
+    item.addEventListener("click",()=>{ selectedId=v.id; openPanel(v,allEdges,cc); highlightNode(v.id); });
     list.appendChild(item);
   });
 }
 
-/* ── sim factory ── */
-function buildSim(nodes, edges, cc) {
+/* ── outlet chips ── */
+function buildOutletChips(outlets) {
+  const bar = document.getElementById("outlet-bar");
+  // remove old chips except "All"
+  bar.querySelectorAll(".outlet-chip[data-outlet]:not([data-outlet='all'])").forEach(c=>c.remove());
+  outlets.forEach(o=>{
+    const chip=document.createElement("button");
+    chip.className="outlet-chip";
+    chip.dataset.outlet=o.id;
+    chip.innerHTML="<img src='"+logoUrl(o.id)+"' onerror=\"this.style.display='none'\"><span>"+o.id+"</span>";
+    chip.addEventListener("click",()=>handleOutletFilter(o.id));
+    bar.appendChild(chip);
+  });
+}
+
+function handleOutletFilter(outletId) {
+  activeOutletFilter = outletId;
+  document.querySelectorAll(".outlet-chip").forEach(c=>{
+    c.classList.toggle("active", c.dataset.outlet===outletId);
+  });
+  redraw();
+}
+
+/* ── redraw ── */
+function redraw() {
+  selectedId=null; closePanel();
+  const {nodes,edges} = getSubgraph();
+  nodes.forEach(d=>{ d.fx=null; d.fy=null; delete d.x; delete d.y; });
+  document.getElementById("btn-freeze").textContent="Freeze";
+  document.getElementById("btn-freeze").classList.remove("active");
+  document.getElementById("stat-sim").textContent="simulating…";
+  const cc={};
+  allEdges.forEach(e=>{ const t=typeof e.target==="object"?e.target.id:e.target; cc[t]=(cc[t]||0)+1; });
+  buildTop10(nodes,edges);
+  document.getElementById("stat-nodes").textContent=nodes.length+" nodes";
+  document.getElementById("stat-edges").textContent=edges.length+" connections";
+  sim=buildSim(nodes,edges,cc);
+  draw(nodes,edges,cc);
+}
+
+/* ── sim ── */
+function buildSim(nodes,edges,cc) {
   return d3.forceSimulation()
-    .force("link", d3.forceLink().id(d => d.id).distance(75).strength(0.35))
-    .force("charge", d3.forceManyBody().strength(d => d.type === "outlet" ? -200 : -25))
-    .force("center", d3.forceCenter(WIDTH / 2, HEIGHT / 2))
-    .force("collision", d3.forceCollide().radius(d => nodeR(d, cc) + 6))
+    .force("link", d3.forceLink().id(d=>d.id).distance(80).strength(0.35))
+    .force("charge", d3.forceManyBody().strength(d=>d.type==="outlet"?-220:-28))
+    .force("center", d3.forceCenter(WIDTH/2,(HEIGHT+headerH())/2))
+    .force("collision", d3.forceCollide().radius(d=>nodeR(d,cc)+6))
     .alphaDecay(0.008)
     .velocityDecay(0.65);
 }
 
-/* ── top10 toggle ── */
-let top10Open = false;
-document.getElementById("btn-top10").addEventListener("click", () => {
-  top10Open = !top10Open;
-  document.getElementById("top10-panel").classList.toggle("open", top10Open);
-  document.getElementById("btn-top10").classList.toggle("active", top10Open);
+/* ── controls ── */
+document.getElementById("btn-info").addEventListener("click",()=>{
+  document.getElementById("intro-overlay").style.display="flex";
+});
+document.getElementById("intro-start").addEventListener("click",()=>{
+  document.getElementById("intro-overlay").style.display="none";
 });
 
-/* ── freeze ── */
-document.getElementById("btn-freeze").addEventListener("click", () => {
-  frozen = !frozen;
-  const btn = document.getElementById("btn-freeze");
-  if (frozen) {
-    allNodes.forEach(d => { if (d.x != null) { d.fx = d.x; d.fy = d.y; } });
+let top10Open=false;
+document.getElementById("btn-top10").addEventListener("click",()=>{
+  top10Open=!top10Open;
+  document.getElementById("top10-panel").classList.toggle("open",top10Open);
+  document.getElementById("btn-top10").classList.toggle("active",top10Open);
+});
+
+document.getElementById("btn-freeze").addEventListener("click",()=>{
+  frozen=!frozen;
+  const btn=document.getElementById("btn-freeze");
+  if(frozen){
+    allNodes.forEach(d=>{ if(d.x!=null){d.fx=d.x;d.fy=d.y;} });
     sim.alphaTarget(0);
-    btn.textContent = "Unfreeze"; btn.classList.add("active");
-    document.getElementById("stat-sim").textContent = "frozen ❄";
+    btn.textContent="Unfreeze"; btn.classList.add("active");
+    document.getElementById("stat-sim").textContent="frozen ❄";
   } else {
-    allNodes.forEach(d => { d.fx = null; d.fy = null; });
+    allNodes.forEach(d=>{ d.fx=null; d.fy=null; });
     sim.alphaTarget(0.1).restart();
-    btn.textContent = "Freeze"; btn.classList.remove("active");
-    document.getElementById("stat-sim").textContent = "simulating…";
+    btn.textContent="Freeze"; btn.classList.remove("active");
+    document.getElementById("stat-sim").textContent="simulating…";
   }
 });
 
-/* ── reset ── */
-document.getElementById("btn-reset").addEventListener("click", () => {
-  frozen = false;
-  allNodes.forEach(d => { d.fx = null; d.fy = null; delete d.x; delete d.y; });
-  document.getElementById("btn-freeze").textContent = "Freeze";
-  document.getElementById("btn-freeze").classList.remove("active");
-  document.getElementById("stat-sim").textContent = "simulating…";
-  const cc = {}; allEdges.forEach(e => { cc[e.target] = (cc[e.target] || 0) + 1; });
-  sim = buildSim(allNodes, allEdges, cc);
-  draw(allNodes, allEdges, cc);
+document.getElementById("btn-reset").addEventListener("click",()=>{
+  activeVendorFilter="all"; activeOutletFilter="all";
+  document.querySelectorAll(".filter-btn").forEach(b=>b.classList.toggle("active",b.dataset.filter==="all"));
+  document.querySelectorAll(".outlet-chip").forEach(c=>c.classList.toggle("active",c.dataset.outlet==="all"));
+  redraw();
 });
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    activeVendorFilter=btn.dataset.filter;
+    redraw();
+  });
+});
+
+document.querySelectorAll(".outlet-chip[data-outlet='all']").forEach(c=>{
+  c.addEventListener("click",()=>handleOutletFilter("all"));
+});
+
+document.getElementById("panel-close").addEventListener("click",()=>{ selectedId=null;closePanel();resetHighlight(); });
 
 /* ── load ── */
 Promise.all([
-  fetch("nodes.json").then(r => r.json()),
-  fetch("edges.json").then(r => r.json())
-]).then(([nodes, edges]) => {
-  document.getElementById("loading").style.display = "none";
-  allNodes = nodes; allEdges = edges;
+  fetch("nodes.json").then(r=>r.json()),
+  fetch("edges.json").then(r=>r.json())
+]).then(([nodes,edges])=>{
+  document.getElementById("loading").style.display="none";
+  allNodes=nodes; allEdges=edges;
 
-  const cc = {};
-  edges.forEach(e => { cc[e.target] = (cc[e.target] || 0) + 1; });
+  const cc={};
+  edges.forEach(e=>{ const t=typeof e.target==="object"?e.target.id:e.target; cc[t]=(cc[t]||0)+1; });
 
-  document.getElementById("stat-nodes").textContent = nodes.length + " nodes";
-  document.getElementById("stat-edges").textContent = edges.length + " connections";
+  document.getElementById("stat-nodes").textContent=nodes.length+" nodes";
+  document.getElementById("stat-edges").textContent=edges.length+" connections";
 
-  buildTop10(nodes, edges);
-  sim = buildSim(nodes, edges, cc);
-  draw(nodes, edges, cc);
+  const outlets=nodes.filter(n=>n.type==="outlet");
+  buildOutletChips(outlets);
+  buildTop10(nodes,edges);
 
-  /* filters */
-  document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      const f = btn.dataset.filter;
-      selectedId = null; closePanel();
-      let fn, fe;
-      if (f === "all") { fn = nodes; fe = edges; }
-      else {
-        const matching = new Set(nodes.filter(n => n.type === "vendor" && (n.category || "").includes(f)).map(n => n.id));
-        fe = edges.filter(e => matching.has(typeof e.target === "object" ? e.target.id : e.target));
-        const outlets = new Set(fe.map(e => typeof e.source === "object" ? e.source.id : e.source));
-        fn = nodes.filter(n => matching.has(n.id) || outlets.has(n.id));
-      }
-      frozen = false;
-      fn.forEach(d => { d.fx = null; d.fy = null; delete d.x; delete d.y; });
-      document.getElementById("btn-freeze").textContent = "Freeze";
-      document.getElementById("btn-freeze").classList.remove("active");
-      document.getElementById("stat-sim").textContent = "simulating…";
-      buildTop10(fn, fe);
-      sim = buildSim(fn, fe, cc);
-      draw(fn, fe, cc);
-    });
-  });
+  sim=buildSim(nodes,edges,cc);
+  draw(nodes,edges,cc);
 
-  document.getElementById("panel-close").addEventListener("click", () => {
-    selectedId = null; closePanel(); resetHighlight();
-  });
-
-}).catch(err => {
-  document.getElementById("loading").innerHTML =
-    "<span style='color:#e74c3c'>Error: " + err.message + "</span>";
+}).catch(err=>{
+  document.getElementById("loading").innerHTML="<span style='color:#e74c3c'>Error: "+err.message+"</span>";
 });
 </script>
 </body>
