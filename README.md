@@ -3,6 +3,14 @@ This is an interactive network map showing the third-party tracking domains embe
 
 This project reveals how modern news websites connect to advertising and analytics ecosystems through real-time browser-tracked data flows.
 
+## Limitations
+
+- **Consent banners** may block trackers before user interaction
+-  Some trackers load only after specific interactions (video play, ad clicks, etc.)
+-   Data represents a single snapshot (**1 June 2026**)
+-   Tracking ecosystems evolve continuously
+
+  
 ---
 
 ## Overview
@@ -57,14 +65,6 @@ The dataset is modeled as a bipartite graph:
 
 Highly connected trackers emerge as structural hubs of the modern web.
 
----
-
-## Limitations
-
-- **Consent banners** may block trackers before user interaction
--  Some trackers load only after specific interactions (video play, ad clicks, etc.)
--   Data represents a single snapshot (**1 June 2026**)
--   Tracking ecosystems evolve continuously
 
 ---
 
