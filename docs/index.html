@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cookie Vendor Network — Global News Outlets</title>
+<title>Snapshot of Cookie Vendor Network in popular English-language news media websites</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
@@ -195,11 +195,20 @@ body { background:#f5f5f0; color:#111; font-family:"Inter",sans-serif; overflow:
 <!-- ── INTRO MODAL ── -->
 <div id="intro-overlay">
   <div id="intro-box">
+
     <h2>Cookie Vendor Network</h2>
     <p class="sub">Third-party tracking domains behind 18 global news outlets</p>
 
-    <p>Every time you open a news article, dozens of companies you've never heard of receive a signal. This map makes that invisible network visible — showing <strong>1,168 connections</strong> between 18 outlets and the ad tech companies embedded in their pages.</p>
-
+    <p>Every time you open a news article, dozens of companies you've never heard of receive a signal. This map is a small imperfect and uncomplete first step towards making that invisible network visible — showing <strong>1,168 connections</strong> between 18 outlets and the ad tech companies embedded in their pages.</p>
+ 
+    <h3>Limitations</h3>
+    <div class="limit-item"><div class="limit-num">1</div><div class="limit-text"><strong>Snapshot in time.</strong> Cookie inventories change week to week. This data reflects one crawl date.</div></div>
+    <div class="limit-item"><div class="limit-num">2</div><div class="limit-text"><strong>No consent interaction.</strong> Vendors were captured on page arrival, before accepting or declining cookie banners.</div></div>
+    <div class="limit-item"><div class="limit-num">3</div><div class="limit-text"><strong>Homepage bias.</strong> Some vendors only appear on specific content verticals and may be undercounted.</div></div>
+    <div class="limit-item"><div class="limit-num">4</div><div class="limit-text"><strong>Domain presence ≠ data transfer.</strong> A request being made does not prove personal data was shared — only that contact occurred.</div></div>
+    <div class="limit-item"><div class="limit-num">5</div><div class="limit-text"><strong>Coverage varies.</strong> Some outlets (BBC, Reuters, DW) have far fewer entries than others, reflecting access and crawl limitations rather than necessarily fewer trackers.</div></div>
+    
+  </div>
     <h3>How to read the map</h3>
     <p>Each <strong>diamond ◆</strong> is a news outlet. Each <strong>circle ●</strong> is a third-party vendor. Lines connect outlets to the vendors loaded on their pages. The bigger the circle, the more outlets that vendor appears on. Click any node to explore its connections.</p>
 
@@ -237,17 +246,8 @@ body { background:#f5f5f0; color:#111; font-family:"Inter",sans-serif; overflow:
         <span class="glossary-term">RTB</span>
         <span class="glossary-def">Real-Time Bidding — an auction that happens in milliseconds when a page loads, during which your profile is shared with hundreds of advertisers.</span>
       </div>
+        <button id="intro-start">Explore the network →</button>
     </div>
-
-    <h3>Limitations</h3>
-    <div class="limit-item"><div class="limit-num">1</div><div class="limit-text"><strong>Snapshot in time.</strong> Cookie inventories change week to week. This data reflects one crawl date.</div></div>
-    <div class="limit-item"><div class="limit-num">2</div><div class="limit-text"><strong>No consent interaction.</strong> Vendors were captured on page arrival, before accepting or declining cookie banners.</div></div>
-    <div class="limit-item"><div class="limit-num">3</div><div class="limit-text"><strong>Homepage bias.</strong> Some vendors only appear on specific content verticals and may be undercounted.</div></div>
-    <div class="limit-item"><div class="limit-num">4</div><div class="limit-text"><strong>Domain presence ≠ data transfer.</strong> A request being made does not prove personal data was shared — only that contact occurred.</div></div>
-    <div class="limit-item"><div class="limit-num">5</div><div class="limit-text"><strong>Coverage varies.</strong> Some outlets (BBC, Reuters, DW) have far fewer entries than others, reflecting access and crawl limitations rather than necessarily fewer trackers.</div></div>
-
-    <button id="intro-start">Explore the network →</button>
-  </div>
 </div>
 
 <!-- ── HEADER ── -->
