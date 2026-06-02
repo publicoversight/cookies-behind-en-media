@@ -68,16 +68,6 @@ Highly connected trackers emerge as structural hubs of the modern web.
 
 ---
 
-## Data Structure
-
-
-docs/
-├── nodes.json # News outlets + tracker vendors with metadata
-└── edges.json # Observed connections between sites and trackers
-
-
----
-
 ## Insight
 
 This project exposes the **invisible infrastructure of the modern web**, showing how journalism platforms are deeply interwoven with global data collection and advertising networks.
