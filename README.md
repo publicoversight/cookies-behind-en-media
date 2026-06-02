@@ -1,5 +1,5 @@
 
-This is an interactive network map showing the third-party tracking domains embedded in 20 of the most popular english news websites.
+This is an interactive network map showing the third-party tracking domains embedded in 20 popular english news websites.
 
 This project reveals how modern news websites connect to advertising and analytics ecosystems through real-time browser-tracked data flows.
 
